@@ -216,7 +216,7 @@
         ],
         "out": [
             {
-                "x": 1720,
+                "x": 1740,
                 "y": 120,
                 "wires": [
                     {
@@ -226,7 +226,7 @@
                 ]
             },
             {
-                "x": 1720,
+                "x": 1750,
                 "y": 240,
                 "wires": [
                     {
@@ -236,7 +236,7 @@
                 ]
             },
             {
-                "x": 1720,
+                "x": 1750,
                 "y": 180,
                 "wires": [
                     {
@@ -246,7 +246,7 @@
                 ]
             },
             {
-                "x": 1720,
+                "x": 1740,
                 "y": 300,
                 "wires": [
                     {
@@ -258,7 +258,13 @@
         ],
         "env": [],
         "meta": {},
-        "color": "#DDAA99"
+        "color": "#DDAA99",
+        "outputLabels": [
+            "CW",
+            "SSB",
+            "RTTY",
+            "FM"
+        ]
     },
     {
         "id": "a383bf836a221445",
@@ -288,11 +294,11 @@
         "id": "0a55e0b186efe415",
         "type": "subflow",
         "name": "Telnet Connection",
-        "info": "msg.command property is the following\n```Filter:\nDisconnect:\nConnect:\nOther:\nKeep_Alive:\n```",
+        "info": "msg.command property is the following\n```filter:\ndisconnect:\nconnect:\nother:\nkeepalive:\n```",
         "category": "",
         "in": [
             {
-                "x": 160,
+                "x": 20,
                 "y": 360,
                 "wires": [
                     {
@@ -303,8 +309,8 @@
         ],
         "out": [
             {
-                "x": 1890,
-                "y": 380,
+                "x": 2270,
+                "y": 320,
                 "wires": [
                     {
                         "id": "57ff9c2fa5df19ac",
@@ -313,8 +319,8 @@
                 ]
             },
             {
-                "x": 1580,
-                "y": 460,
+                "x": 1960,
+                "y": 400,
                 "wires": [
                     {
                         "id": "6db5adba686a842b",
@@ -339,13 +345,13 @@
             },
             {
                 "name": "Port",
-                "type": "num",
+                "type": "str",
                 "value": "23",
                 "ui": {
                     "type": "input",
                     "opts": {
                         "types": [
-                            "num"
+                            "str"
                         ]
                     }
                 }
@@ -393,6 +399,10 @@
                         ]
                     }
                 }
+            },
+            {
+                "name": "Password",
+                "type": "cred"
             }
         ],
         "meta": {},
@@ -403,7 +413,17 @@
         "outputLabels": [
             "Table",
             "Human Cluster Output"
-        ]
+        ],
+        "status": {
+            "x": 1600,
+            "y": 380,
+            "wires": [
+                {
+                    "id": "e8e3f34a66add5ba",
+                    "port": 0
+                }
+            ]
+        }
     },
     {
         "id": "412c3dc9d4bffd55",
@@ -502,8 +522,8 @@
         "id": "e488c054f759661d",
         "type": "junction",
         "z": "f55cb29c.3fc26",
-        "x": 2040,
-        "y": 1780,
+        "x": 2060,
+        "y": 1680,
         "wires": [
             [
                 "c3f9cccecf3bae22"
@@ -562,11 +582,40 @@
         "id": "ed4de9abeb9adcc3",
         "type": "junction",
         "z": "f55cb29c.3fc26",
-        "x": 760,
-        "y": 1800,
+        "x": 780,
+        "y": 1700,
         "wires": [
             [
                 "666ee13b.1e315"
+            ]
+        ]
+    },
+    {
+        "id": "982ef287226758a8",
+        "type": "junction",
+        "z": "4cb346e2.3b0ca8",
+        "x": 360,
+        "y": 380,
+        "wires": [
+            [
+                "d44b6a617109f831",
+                "1f5bae85164954a9",
+                "84dab531a496a5a7",
+                "2af1d341d58943b0",
+                "86aa8750b58d5cce",
+                "d81e704e0de0f1d9"
+            ]
+        ]
+    },
+    {
+        "id": "09c9fab6d79ded1b",
+        "type": "junction",
+        "z": "f55cb29c.3fc26",
+        "x": 2480,
+        "y": 700,
+        "wires": [
+            [
+                "44164e876e5348b1"
             ]
         ]
     },
@@ -3310,8 +3359,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 3,
-        "x": 1330,
-        "y": 520,
+        "x": 1210,
+        "y": 380,
         "wires": [
             [
                 "336c664dfb6d90d0"
@@ -3357,8 +3406,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 3,
-        "x": 1330,
-        "y": 580,
+        "x": 1210,
+        "y": 440,
         "wires": [
             [
                 "336c664dfb6d90d0"
@@ -3404,8 +3453,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 3,
-        "x": 1330,
-        "y": 640,
+        "x": 1210,
+        "y": 500,
         "wires": [
             [
                 "336c664dfb6d90d0"
@@ -3451,8 +3500,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 3,
-        "x": 1330,
-        "y": 700,
+        "x": 1210,
+        "y": 560,
         "wires": [
             [
                 "336c664dfb6d90d0"
@@ -3498,8 +3547,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 3,
-        "x": 1330,
-        "y": 760,
+        "x": 1210,
+        "y": 620,
         "wires": [
             [
                 "336c664dfb6d90d0"
@@ -3545,8 +3594,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 3,
-        "x": 1330,
-        "y": 820,
+        "x": 1210,
+        "y": 680,
         "wires": [
             [
                 "336c664dfb6d90d0"
@@ -3599,8 +3648,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 4,
-        "x": 1340,
-        "y": 880,
+        "x": 1220,
+        "y": 740,
         "wires": [
             [
                 "336c664dfb6d90d0"
@@ -3656,10 +3705,10 @@
         "to": "",
         "reg": false,
         "x": 520,
-        "y": 80,
+        "y": 180,
         "wires": [
             [
-                "269ebb5a81c35055"
+                "6c0df889d77bb079"
             ]
         ]
     },
@@ -3686,7 +3735,7 @@
         "y": 220,
         "wires": [
             [
-                "34d9a1b4550bd48a"
+                "6c0df889d77bb079"
             ]
         ]
     },
@@ -3710,10 +3759,10 @@
         "to": "",
         "reg": false,
         "x": 520,
-        "y": 360,
+        "y": 260,
         "wires": [
             [
-                "1cd63e8bfc41e0e2"
+                "6c0df889d77bb079"
             ]
         ]
     },
@@ -3737,10 +3786,10 @@
         "to": "",
         "reg": false,
         "x": 520,
-        "y": 500,
+        "y": 300,
         "wires": [
             [
-                "2cb6ad1881950a92"
+                "6c0df889d77bb079"
             ]
         ]
     },
@@ -3764,10 +3813,10 @@
         "to": "",
         "reg": false,
         "x": 520,
-        "y": 640,
+        "y": 340,
         "wires": [
             [
-                "7f9c0f571555a36c"
+                "6c0df889d77bb079"
             ]
         ]
     },
@@ -3791,10 +3840,10 @@
         "to": "",
         "reg": false,
         "x": 520,
-        "y": 780,
+        "y": 380,
         "wires": [
             [
-                "2a1d40058df1a0c0"
+                "6c0df889d77bb079"
             ]
         ]
     },
@@ -3818,7 +3867,7 @@
         "to": "",
         "reg": false,
         "x": 510,
-        "y": 920,
+        "y": 420,
         "wires": [
             [
                 "6c0df889d77bb079"
@@ -3920,7 +3969,7 @@
         "to": "",
         "reg": false,
         "x": 510,
-        "y": 1000,
+        "y": 460,
         "wires": [
             [
                 "1a3d73e8503ccb11"
@@ -3947,7 +3996,7 @@
         "to": "",
         "reg": false,
         "x": 520,
-        "y": 1060,
+        "y": 500,
         "wires": [
             [
                 "1a3d73e8503ccb11"
@@ -3977,480 +4026,6 @@
         "y": 1000,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "269ebb5a81c35055",
-        "type": "switch",
-        "z": "bc4d4e8.bec2bb",
-        "name": "Mode in Comment",
-        "property": "payload.comment",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "cont",
-                "v": "CW",
-                "vt": "str"
-            },
-            {
-                "t": "cont",
-                "v": "RTTY",
-                "vt": "str"
-            },
-            {
-                "t": "cont",
-                "v": "FT8",
-                "vt": "str"
-            },
-            {
-                "t": "cont",
-                "v": "PSK31",
-                "vt": "str"
-            },
-            {
-                "t": "cont",
-                "v": "LSB",
-                "vt": "str"
-            },
-            {
-                "t": "cont",
-                "v": "SSB",
-                "vt": "str"
-            },
-            {
-                "t": "cont",
-                "v": "USB",
-                "vt": "str"
-            },
-            {
-                "t": "else"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 8,
-        "x": 750,
-        "y": 80,
-        "wires": [
-            [
-                "336c664dfb6d90d0"
-            ],
-            [
-                "1bb72f4a0819f216"
-            ],
-            [
-                "1bb72f4a0819f216"
-            ],
-            [
-                "1bb72f4a0819f216"
-            ],
-            [
-                "b3ee8487b8373fb4"
-            ],
-            [
-                "b3ee8487b8373fb4"
-            ],
-            [
-                "b3ee8487b8373fb4"
-            ],
-            [
-                "83d55f2c.f5d7f"
-            ]
-        ]
-    },
-    {
-        "id": "34d9a1b4550bd48a",
-        "type": "switch",
-        "z": "bc4d4e8.bec2bb",
-        "name": "Mode in Comment",
-        "property": "payload.comment",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "cont",
-                "v": "CW",
-                "vt": "str"
-            },
-            {
-                "t": "cont",
-                "v": "RTTY",
-                "vt": "str"
-            },
-            {
-                "t": "cont",
-                "v": "FT8",
-                "vt": "str"
-            },
-            {
-                "t": "cont",
-                "v": "PSK31",
-                "vt": "str"
-            },
-            {
-                "t": "cont",
-                "v": "LSB",
-                "vt": "str"
-            },
-            {
-                "t": "cont",
-                "v": "SSB",
-                "vt": "str"
-            },
-            {
-                "t": "cont",
-                "v": "USB",
-                "vt": "str"
-            },
-            {
-                "t": "else"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 8,
-        "x": 750,
-        "y": 220,
-        "wires": [
-            [
-                "336c664dfb6d90d0"
-            ],
-            [
-                "1bb72f4a0819f216"
-            ],
-            [
-                "1bb72f4a0819f216"
-            ],
-            [
-                "1bb72f4a0819f216"
-            ],
-            [
-                "b3ee8487b8373fb4"
-            ],
-            [
-                "b3ee8487b8373fb4"
-            ],
-            [
-                "b3ee8487b8373fb4"
-            ],
-            [
-                "c629474c.113e38"
-            ]
-        ]
-    },
-    {
-        "id": "1cd63e8bfc41e0e2",
-        "type": "switch",
-        "z": "bc4d4e8.bec2bb",
-        "name": "Mode in Comment",
-        "property": "payload.comment",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "cont",
-                "v": "CW",
-                "vt": "str"
-            },
-            {
-                "t": "cont",
-                "v": "RTTY",
-                "vt": "str"
-            },
-            {
-                "t": "cont",
-                "v": "FT8",
-                "vt": "str"
-            },
-            {
-                "t": "cont",
-                "v": "PSK31",
-                "vt": "str"
-            },
-            {
-                "t": "cont",
-                "v": "LSB",
-                "vt": "str"
-            },
-            {
-                "t": "cont",
-                "v": "SSB",
-                "vt": "str"
-            },
-            {
-                "t": "cont",
-                "v": "USB",
-                "vt": "str"
-            },
-            {
-                "t": "else"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 8,
-        "x": 750,
-        "y": 360,
-        "wires": [
-            [
-                "336c664dfb6d90d0"
-            ],
-            [
-                "1bb72f4a0819f216"
-            ],
-            [
-                "1bb72f4a0819f216"
-            ],
-            [
-                "1bb72f4a0819f216"
-            ],
-            [
-                "b3ee8487b8373fb4"
-            ],
-            [
-                "b3ee8487b8373fb4"
-            ],
-            [
-                "b3ee8487b8373fb4"
-            ],
-            [
-                "d704dd26.1aca3"
-            ]
-        ]
-    },
-    {
-        "id": "2cb6ad1881950a92",
-        "type": "switch",
-        "z": "bc4d4e8.bec2bb",
-        "name": "Mode in Comment",
-        "property": "payload.comment",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "cont",
-                "v": "CW",
-                "vt": "str"
-            },
-            {
-                "t": "cont",
-                "v": "RTTY",
-                "vt": "str"
-            },
-            {
-                "t": "cont",
-                "v": "FT8",
-                "vt": "str"
-            },
-            {
-                "t": "cont",
-                "v": "PSK31",
-                "vt": "str"
-            },
-            {
-                "t": "cont",
-                "v": "LSB",
-                "vt": "str"
-            },
-            {
-                "t": "cont",
-                "v": "SSB",
-                "vt": "str"
-            },
-            {
-                "t": "cont",
-                "v": "USB",
-                "vt": "str"
-            },
-            {
-                "t": "else"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 8,
-        "x": 750,
-        "y": 500,
-        "wires": [
-            [
-                "336c664dfb6d90d0"
-            ],
-            [
-                "1bb72f4a0819f216"
-            ],
-            [
-                "1bb72f4a0819f216"
-            ],
-            [
-                "1bb72f4a0819f216"
-            ],
-            [
-                "b3ee8487b8373fb4"
-            ],
-            [
-                "b3ee8487b8373fb4"
-            ],
-            [
-                "b3ee8487b8373fb4"
-            ],
-            [
-                "26752e6f.8b0412"
-            ]
-        ]
-    },
-    {
-        "id": "7f9c0f571555a36c",
-        "type": "switch",
-        "z": "bc4d4e8.bec2bb",
-        "name": "Mode in Comment",
-        "property": "payload.comment",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "cont",
-                "v": "CW",
-                "vt": "str"
-            },
-            {
-                "t": "cont",
-                "v": "RTTY",
-                "vt": "str"
-            },
-            {
-                "t": "cont",
-                "v": "FT8",
-                "vt": "str"
-            },
-            {
-                "t": "cont",
-                "v": "PSK31",
-                "vt": "str"
-            },
-            {
-                "t": "cont",
-                "v": "LSB",
-                "vt": "str"
-            },
-            {
-                "t": "cont",
-                "v": "SSB",
-                "vt": "str"
-            },
-            {
-                "t": "cont",
-                "v": "USB",
-                "vt": "str"
-            },
-            {
-                "t": "else"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 8,
-        "x": 750,
-        "y": 640,
-        "wires": [
-            [
-                "336c664dfb6d90d0"
-            ],
-            [
-                "1bb72f4a0819f216"
-            ],
-            [
-                "1bb72f4a0819f216"
-            ],
-            [
-                "1bb72f4a0819f216"
-            ],
-            [
-                "b3ee8487b8373fb4"
-            ],
-            [
-                "b3ee8487b8373fb4"
-            ],
-            [
-                "b3ee8487b8373fb4"
-            ],
-            [
-                "3ebd4ba0.5ac374"
-            ]
-        ]
-    },
-    {
-        "id": "2a1d40058df1a0c0",
-        "type": "switch",
-        "z": "bc4d4e8.bec2bb",
-        "name": "Mode in Comment",
-        "property": "payload.comment",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "cont",
-                "v": "CW",
-                "vt": "str"
-            },
-            {
-                "t": "cont",
-                "v": "RTTY",
-                "vt": "str"
-            },
-            {
-                "t": "cont",
-                "v": "FT8",
-                "vt": "str"
-            },
-            {
-                "t": "cont",
-                "v": "PSK31",
-                "vt": "str"
-            },
-            {
-                "t": "cont",
-                "v": "LSB",
-                "vt": "str"
-            },
-            {
-                "t": "cont",
-                "v": "SSB",
-                "vt": "str"
-            },
-            {
-                "t": "cont",
-                "v": "USB",
-                "vt": "str"
-            },
-            {
-                "t": "else"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 8,
-        "x": 750,
-        "y": 780,
-        "wires": [
-            [
-                "336c664dfb6d90d0"
-            ],
-            [
-                "1bb72f4a0819f216"
-            ],
-            [
-                "1bb72f4a0819f216"
-            ],
-            [
-                "1bb72f4a0819f216"
-            ],
-            [
-                "b3ee8487b8373fb4"
-            ],
-            [
-                "b3ee8487b8373fb4"
-            ],
-            [
-                "b3ee8487b8373fb4"
-            ],
-            [
-                "590b9a84.2eda94"
-            ]
         ]
     },
     {
@@ -4503,8 +4078,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 8,
-        "x": 750,
-        "y": 920,
+        "x": 790,
+        "y": 300,
         "wires": [
             [
                 "336c664dfb6d90d0"
@@ -4528,7 +4103,13 @@
                 "b3ee8487b8373fb4"
             ],
             [
-                "3cffd6b7.5568ea"
+                "3cffd6b7.5568ea",
+                "83d55f2c.f5d7f",
+                "c629474c.113e38",
+                "d704dd26.1aca3",
+                "26752e6f.8b0412",
+                "3ebd4ba0.5ac374",
+                "590b9a84.2eda94"
             ]
         ]
     },
@@ -4842,51 +4423,6 @@
         "wires": []
     },
     {
-        "id": "ed7065d8.6f56c8",
-        "type": "inject",
-        "z": "0a55e0b186efe415",
-        "name": "Disconnect",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 960,
-        "y": 80,
-        "wires": [
-            [
-                "94c1ecc8.4932"
-            ]
-        ]
-    },
-    {
-        "id": "94c1ecc8.4932",
-        "type": "function",
-        "z": "0a55e0b186efe415",
-        "name": "Disconnect",
-        "func": "msg.payload = 'bye\\r\\n'\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "x": 1130,
-        "y": 80,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "6f7e14ce.e50c9c",
         "type": "function",
         "z": "0a55e0b186efe415",
@@ -4933,245 +4469,20 @@
         ]
     },
     {
-        "id": "6634ff9d.73c56",
-        "type": "inject",
-        "z": "0a55e0b186efe415",
-        "name": "Disconnect",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 960,
-        "y": 120,
-        "wires": [
-            [
-                "34950b6e.a2ef44"
-            ]
-        ]
-    },
-    {
-        "id": "34950b6e.a2ef44",
-        "type": "function",
-        "z": "0a55e0b186efe415",
-        "name": "Disconnect",
-        "func": "msg.payload = 'bye\\r\\n'\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "x": 1130,
-        "y": 120,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "dbad8749.206b78",
-        "type": "function",
-        "z": "0a55e0b186efe415",
-        "name": "Disconnect",
-        "func": "msg.payload = 'bye\\r\\n'\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "x": 1130,
-        "y": 160,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "5b3edb70.7a9154",
-        "type": "inject",
-        "z": "0a55e0b186efe415",
-        "name": "Disconnect",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 960,
-        "y": 160,
-        "wires": [
-            [
-                "dbad8749.206b78"
-            ]
-        ]
-    },
-    {
-        "id": "8ae0ba99.404db8",
-        "type": "inject",
-        "z": "0a55e0b186efe415",
-        "name": "Disconnect",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 960,
-        "y": 200,
-        "wires": [
-            [
-                "f631e4d5.d1efb8"
-            ]
-        ]
-    },
-    {
-        "id": "f631e4d5.d1efb8",
-        "type": "function",
-        "z": "0a55e0b186efe415",
-        "name": "Disconnect",
-        "func": "msg.payload = 'quit\\r\\n'\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "x": 1130,
-        "y": 200,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "4f51c6b8.2f4698",
-        "type": "inject",
-        "z": "0a55e0b186efe415",
-        "name": "Disconnect",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 960,
-        "y": 240,
-        "wires": [
-            [
-                "d6409142.86d81"
-            ]
-        ]
-    },
-    {
-        "id": "d6409142.86d81",
-        "type": "function",
-        "z": "0a55e0b186efe415",
-        "name": "Disconnect",
-        "func": "msg.payload = 'bye\\r\\n'\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "x": 1130,
-        "y": 240,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "bdd14b96.c32268",
-        "type": "function",
-        "z": "0a55e0b186efe415",
-        "name": "Disconnect",
-        "func": "msg.payload = 'bye\\r\\n'\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "x": 1130,
-        "y": 280,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "bee00a4d.cd0818",
-        "type": "inject",
-        "z": "0a55e0b186efe415",
-        "name": "Disconnect",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 960,
-        "y": 280,
-        "wires": [
-            [
-                "bdd14b96.c32268"
-            ]
-        ]
-    },
-    {
         "id": "22df08902f068fd5",
         "type": "tcp request",
         "z": "0a55e0b186efe415",
         "name": "Connect to Cluster",
         "server": "",
         "port": "",
-        "out": "time",
+        "out": "sit",
         "ret": "buffer",
-        "splitc": "0",
+        "splitc": " ",
         "newline": "",
         "trim": false,
         "tls": "",
-        "x": 950,
-        "y": 400,
+        "x": 1350,
+        "y": 340,
         "wires": [
             [
                 "e8e3f34a66add5ba"
@@ -5189,14 +4500,16 @@
                 "p": "host",
                 "pt": "msg",
                 "to": "Host",
-                "tot": "env"
+                "tot": "env",
+                "dc": true
             },
             {
                 "t": "set",
                 "p": "port",
                 "pt": "msg",
                 "to": "Port",
-                "tot": "env"
+                "tot": "env",
+                "dc": true
             }
         ],
         "action": "",
@@ -5204,11 +4517,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 750,
-        "y": 400,
+        "x": 950,
+        "y": 340,
         "wires": [
             [
-                "22df08902f068fd5"
+                "b7ce8cd8b90757c1"
             ]
         ]
     },
@@ -5217,27 +4530,27 @@
         "type": "switch",
         "z": "0a55e0b186efe415",
         "name": "",
-        "property": "command",
+        "property": "topic",
         "propertyType": "msg",
         "rules": [
             {
                 "t": "eq",
-                "v": "Filter",
+                "v": "filter",
                 "vt": "str"
             },
             {
                 "t": "eq",
-                "v": "Disconnect",
+                "v": "disconnect",
                 "vt": "str"
             },
             {
                 "t": "eq",
-                "v": "Connect",
+                "v": "connect",
                 "vt": "str"
             },
             {
                 "t": "eq",
-                "v": "Keep_Alive",
+                "v": "keepalive",
                 "vt": "str"
             },
             {
@@ -5247,7 +4560,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 5,
-        "x": 270,
+        "x": 130,
         "y": 360,
         "wires": [
             [],
@@ -5276,7 +4589,8 @@
                 "p": "payload",
                 "pt": "msg",
                 "to": "Disconnect",
-                "tot": "env"
+                "tot": "env",
+                "dc": true
             }
         ],
         "action": "",
@@ -5284,35 +4598,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 490,
-        "y": 320,
-        "wires": [
-            [
-                "171c9cd6f2668ed6"
-            ]
-        ]
-    },
-    {
-        "id": "504c894a8b0e586b",
-        "type": "change",
-        "z": "0a55e0b186efe415",
-        "name": "Set Connect Message",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "Connect",
-                "tot": "env"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 480,
-        "y": 360,
+        "x": 350,
+        "y": 260,
         "wires": [
             [
                 "171c9cd6f2668ed6"
@@ -5330,7 +4617,8 @@
                 "p": "payload",
                 "pt": "msg",
                 "to": "KeepAlive",
-                "tot": "env"
+                "tot": "env",
+                "dc": true
             }
         ],
         "action": "",
@@ -5338,7 +4626,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 490,
+        "x": 350,
         "y": 440,
         "wires": [
             [
@@ -5357,8 +4645,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1130,
-        "y": 400,
+        "x": 1510,
+        "y": 340,
         "wires": [
             [
                 "6db5adba686a842b"
@@ -5396,8 +4684,8 @@
         "checkall": "false",
         "repair": false,
         "outputs": 4,
-        "x": 1270,
-        "y": 400,
+        "x": 1650,
+        "y": 340,
         "wires": [
             [],
             [],
@@ -5418,8 +4706,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1510,
-        "y": 380,
+        "x": 1890,
+        "y": 320,
         "wires": [
             [
                 "57ff9c2fa5df19ac"
@@ -5437,10 +4725,91 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1730,
-        "y": 380,
+        "x": 2110,
+        "y": 320,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "504c894a8b0e586b",
+        "type": "change",
+        "z": "0a55e0b186efe415",
+        "name": "Set Connect Message",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Callsign",
+                "tot": "env",
+                "dc": true
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 400,
+        "y": 320,
+        "wires": [
+            [
+                "caf37a114550c9a3"
+            ]
+        ]
+    },
+    {
+        "id": "b7ce8cd8b90757c1",
+        "type": "string",
+        "z": "0a55e0b186efe415",
+        "name": "Add Return Char",
+        "methods": [
+            {
+                "name": "append",
+                "params": [
+                    {
+                        "type": "str",
+                        "value": "\\r\\n"
+                    }
+                ]
+            }
+        ],
+        "prop": "payload",
+        "propout": "payload",
+        "object": "msg",
+        "objectout": "msg",
+        "x": 1150,
+        "y": 340,
+        "wires": [
+            [
+                "22df08902f068fd5"
+            ]
+        ]
+    },
+    {
+        "id": "caf37a114550c9a3",
+        "type": "trigger",
+        "z": "0a55e0b186efe415",
+        "name": "",
+        "op1": "",
+        "op2": "Password",
+        "op1type": "pay",
+        "op2type": "env",
+        "duration": "3",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 600,
+        "y": 320,
+        "wires": [
+            [
+                "171c9cd6f2668ed6"
+            ]
         ]
     },
     {
@@ -8687,78 +8056,14 @@
         ]
     },
     {
-        "id": "70063ae2.20ee14",
-        "type": "tcp request",
-        "z": "4cb346e2.3b0ca8",
-        "name": "dxc.nc7j.com:7373 - Digital",
-        "server": "dxc.nc7j.com",
-        "port": "7373",
-        "out": "sit",
-        "ret": "buffer",
-        "splitc": " ",
-        "x": 780,
-        "y": 1720,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "2c186f89.b4572",
-        "type": "comment",
-        "z": "4cb346e2.3b0ca8",
-        "name": "Digital Spots",
-        "info": "",
-        "x": 550,
-        "y": 1720,
-        "wires": []
-    },
-    {
-        "id": "98124432.8be948",
-        "type": "tcp request",
-        "z": "4cb346e2.3b0ca8",
-        "name": "hamalert.org:7300",
-        "server": "hamalert.org",
-        "port": "7300",
-        "out": "sit",
-        "ret": "buffer",
-        "splitc": " ",
-        "x": 810,
-        "y": 1840,
-        "wires": [
-            [
-                "ec6d21c7.fc97a"
-            ]
-        ]
-    },
-    {
         "id": "bf6803b6.faefb",
         "type": "comment",
         "z": "4cb346e2.3b0ca8",
         "name": "Ham Alert",
         "info": "",
-        "x": 620,
-        "y": 1840,
+        "x": 920,
+        "y": 140,
         "wires": []
-    },
-    {
-        "id": "20761857.f937e8",
-        "type": "function",
-        "z": "4cb346e2.3b0ca8",
-        "name": "Format Spot",
-        "func": "let spot = msg.payload\n\nlet freq = spot.substr(17,7);\nlet callx = spot.substr(26,12);\nlet call = callx.trimRight();\nlet comment = spot.substr(39,26);\nlet time = spot.substr(70,5);\nlet qthstatus = \"\";\nlet source = \"HA\";\nlet calllength = call.length;\nlet type = \"spot\";\n\nreturn {payload : {type:type,freq:freq,call:call,comment:comment,time:time,qthstatus:qthstatus,source:source,calllength:calllength}}",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1270,
-        "y": 1800,
-        "wires": [
-            [
-                "b5b51e9a.e30e5",
-                "90ce8a3b5b8c1089"
-            ]
-        ]
     },
     {
         "id": "96f6f214.3a55f",
@@ -8766,31 +8071,13 @@
         "z": "4cb346e2.3b0ca8",
         "name": "HamAlert Status",
         "scope": [
-            "98124432.8be948"
+            "d81e704e0de0f1d9"
         ],
-        "x": 700,
-        "y": 3640,
+        "x": 1080,
+        "y": 680,
         "wires": [
             [
                 "d74cfe99.00dcf"
-            ]
-        ]
-    },
-    {
-        "id": "ec6d21c7.fc97a",
-        "type": "function",
-        "z": "4cb346e2.3b0ca8",
-        "name": "UTF8",
-        "func": "msg.payload=msg.payload.toString('UTF8');\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "x": 970,
-        "y": 1840,
-        "wires": [
-            [
-                "3f0f47a9.b8d5a8"
             ]
         ]
     },
@@ -8804,8 +8091,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 880,
-        "y": 3640,
+        "x": 1260,
+        "y": 680,
         "wires": [
             [
                 "2f8d384.22bccc8",
@@ -8821,58 +8108,9 @@
         "z": "4cb346e2.3b0ca8",
         "name": "N1MM Spotting Inject CW, SSB & Digital",
         "info": "",
-        "x": 180,
-        "y": 360,
+        "x": 280,
+        "y": 140,
         "wires": []
-    },
-    {
-        "id": "3f0f47a9.b8d5a8",
-        "type": "switch",
-        "z": "4cb346e2.3b0ca8",
-        "name": "DX de",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "regex",
-                "v": "DX de",
-                "vt": "str",
-                "case": false
-            },
-            {
-                "t": "nempty"
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 2,
-        "x": 1090,
-        "y": 1840,
-        "wires": [
-            [
-                "20761857.f937e8"
-            ],
-            [
-                "e941155b.7564d8"
-            ]
-        ]
-    },
-    {
-        "id": "889f3afb.727b08",
-        "type": "tcp request",
-        "z": "4cb346e2.3b0ca8",
-        "name": "dxc.ve7cc.net:23",
-        "server": "dxc.ve7cc.net",
-        "port": "23",
-        "out": "sit",
-        "splitc": " ",
-        "x": 690,
-        "y": 760,
-        "wires": [
-            [
-                "23e4f57b.58550a"
-            ]
-        ]
     },
     {
         "id": "9cfcc2e5.79794",
@@ -8880,144 +8118,9 @@
         "z": "4cb346e2.3b0ca8",
         "name": "Skimmer + Human Entry",
         "info": "",
-        "x": 710,
-        "y": 720,
+        "x": 630,
+        "y": 260,
         "wires": []
-    },
-    {
-        "id": "23e4f57b.58550a",
-        "type": "function",
-        "z": "4cb346e2.3b0ca8",
-        "name": "UTF8",
-        "func": "msg.payload=msg.payload.toString('UTF8');\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1050,
-        "y": 560,
-        "wires": [
-            [
-                "ecca64a1.1c8098",
-                "b6ef7df6.47134"
-            ]
-        ]
-    },
-    {
-        "id": "ecca64a1.1c8098",
-        "type": "switch",
-        "z": "4cb346e2.3b0ca8",
-        "name": "DX de",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "cont",
-                "v": "BEACON",
-                "vt": "str"
-            },
-            {
-                "t": "cont",
-                "v": "NCDXF",
-                "vt": "str"
-            },
-            {
-                "t": "regex",
-                "v": "DX de",
-                "vt": "str",
-                "case": false
-            },
-            {
-                "t": "nempty"
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 4,
-        "x": 1190,
-        "y": 560,
-        "wires": [
-            [
-                "26e56d12.445cf2"
-            ],
-            [
-                "26e56d12.445cf2"
-            ],
-            [
-                "ef5897ac51f0a515"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "b4e80940.9cb2f8",
-        "type": "link out",
-        "z": "4cb346e2.3b0ca8",
-        "name": "CW Skim RAW Out",
-        "links": [
-            "864a2180.57d3",
-            "e9d1adb2d99a3011"
-        ],
-        "x": 1635,
-        "y": 480,
-        "wires": []
-    },
-    {
-        "id": "1ee104d0.c4fa1b",
-        "type": "tcp request",
-        "z": "4cb346e2.3b0ca8",
-        "name": "dxc.k0xm.net:7300",
-        "server": "dxc.k0xm.net",
-        "port": "7300",
-        "out": "sit",
-        "splitc": " ",
-        "x": 710,
-        "y": 180,
-        "wires": [
-            [
-                "b420b87.6fe5f48"
-            ]
-        ]
-    },
-    {
-        "id": "b420b87.6fe5f48",
-        "type": "function",
-        "z": "4cb346e2.3b0ca8",
-        "name": "UTF8",
-        "func": "msg.payload=msg.payload.toString('UTF8');\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "x": 910,
-        "y": 140,
-        "wires": [
-            [
-                "c7955c8d.5f7c7",
-                "2e857efd.a11982"
-            ]
-        ]
-    },
-    {
-        "id": "6d31676d.1dc3a8",
-        "type": "function",
-        "z": "4cb346e2.3b0ca8",
-        "name": "Table Format",
-        "func": "let spot = msg.payload\n\nlet freq = spot.freq;\nlet call = spot.call;\nlet comment = spot.comment;\nlet time = spot.time;\n\n\nreturn {payload:{\n    command:\"addData\",\n    arguments:[\n        {\n            freq:freq,call:call,comment:comment,time:time\n        },\n        true\n    ],\n    returnPromise:true\n    }\n};",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1490,
-        "y": 120,
-        "wires": [
-            [
-                "ee88cd3e.0b8e9",
-                "828dadf31e783bcf"
-            ]
-        ]
     },
     {
         "id": "fffbac47.f3ad9",
@@ -9035,10 +8138,10 @@
         "z": "4cb346e2.3b0ca8",
         "name": "K0MX Status",
         "scope": [
-            "1ee104d0.c4fa1b"
+            "2af1d341d58943b0"
         ],
-        "x": 710,
-        "y": 3260,
+        "x": 1090,
+        "y": 300,
         "wires": [
             [
                 "f06f331f.7fb4b"
@@ -9055,8 +8158,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 880,
-        "y": 3260,
+        "x": 1260,
+        "y": 300,
         "wires": [
             [
                 "150b2fe5.d7ef9",
@@ -9077,109 +8180,13 @@
         "wires": []
     },
     {
-        "id": "2e857efd.a11982",
-        "type": "switch",
-        "z": "4cb346e2.3b0ca8",
-        "name": "DX de",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "regex",
-                "v": "DX de",
-                "vt": "str",
-                "case": false
-            },
-            {
-                "t": "nempty"
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 2,
-        "x": 1070,
-        "y": 140,
-        "wires": [
-            [
-                "e593c4ce70027764"
-            ],
-            [
-                "38e66d41.79c412"
-            ]
-        ]
-    },
-    {
-        "id": "17f625e2.9d066a",
-        "type": "comment",
-        "z": "4cb346e2.3b0ca8",
-        "name": "CW Skim Raw Out",
-        "info": "",
-        "x": 1570,
-        "y": 440,
-        "wires": []
-    },
-    {
-        "id": "6c3fd1c0.fb5d7",
-        "type": "tcp request",
-        "z": "4cb346e2.3b0ca8",
-        "name": "ch.w6rk.com:7300",
-        "server": "ch.w6rk.com",
-        "port": "7300",
-        "out": "sit",
-        "splitc": " ",
-        "x": 810,
-        "y": 1960,
-        "wires": [
-            [
-                "43083a47.debc04"
-            ]
-        ]
-    },
-    {
-        "id": "43083a47.debc04",
-        "type": "function",
-        "z": "4cb346e2.3b0ca8",
-        "name": "UTF8",
-        "func": "msg.payload=msg.payload.toString('UTF8');\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "x": 970,
-        "y": 1960,
-        "wires": [
-            [
-                "8e6a7b91.e63308"
-            ]
-        ]
-    },
-    {
-        "id": "b383413.57fefc",
-        "type": "function",
-        "z": "4cb346e2.3b0ca8",
-        "name": "Format Spot",
-        "func": "let spot = msg.payload\n\nlet freq = spot.substr(17,7);\nlet callx = spot.substr(26,6);\nlet call = callx.trimRight();\nlet comment = spot.substr(39,25);\n//let slug = comment.substring(comment.indexOf(',') + 1);\nlet time = spot.substr(70,5);\nlet qthstatus = \"\";\nlet source = \"CH\";\nlet calllength = call.length;\nlet type = \"spot\";\n\nreturn {payload:{type:type,freq:freq,call:call,comment:comment,time:time,qthstatus:qthstatus,source:source,calllength:calllength}};",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1270,
-        "y": 1940,
-        "wires": [
-            [
-                "dc4cec731ba7386f"
-            ]
-        ]
-    },
-    {
         "id": "45a9c41f.dad9cc",
         "type": "comment",
         "z": "4cb346e2.3b0ca8",
         "name": "County Hunter Spots",
         "info": "",
-        "x": 550,
-        "y": 1940,
+        "x": 1090,
+        "y": 140,
         "wires": []
     },
     {
@@ -9188,10 +8195,10 @@
         "z": "4cb346e2.3b0ca8",
         "name": "W6RK Status",
         "scope": [
-            "6c3fd1c0.fb5d7"
+            "86aa8750b58d5cce"
         ],
-        "x": 710,
-        "y": 3480,
+        "x": 1090,
+        "y": 520,
         "wires": [
             [
                 "1c77db0b.b108a5",
@@ -9209,8 +8216,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 880,
-        "y": 3480,
+        "x": 1260,
+        "y": 520,
         "wires": [
             [
                 "2cd160fb.c887a",
@@ -9219,48 +8226,6 @@
                 "96d9c94.8b38738"
             ]
         ]
-    },
-    {
-        "id": "8e6a7b91.e63308",
-        "type": "switch",
-        "z": "4cb346e2.3b0ca8",
-        "name": "DX de",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "regex",
-                "v": "DX de",
-                "vt": "str",
-                "case": false
-            },
-            {
-                "t": "nempty"
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 2,
-        "x": 1090,
-        "y": 1960,
-        "wires": [
-            [
-                "b383413.57fefc"
-            ],
-            [
-                "46861ac4.8c9034"
-            ]
-        ]
-    },
-    {
-        "id": "cb3bebad.5d7338",
-        "type": "comment",
-        "z": "4cb346e2.3b0ca8",
-        "name": "w3lpl.net:7373 - Skimmer Only",
-        "info": "",
-        "x": 710,
-        "y": 500,
-        "wires": []
     },
     {
         "id": "668c8fce.f3b48",
@@ -9273,33 +8238,13 @@
         "wires": []
     },
     {
-        "id": "ef8fb44a.9ccce8",
-        "type": "comment",
-        "z": "4cb346e2.3b0ca8",
-        "name": "dxc.nc7j.com:23 - Skimmer Only",
-        "info": "",
-        "x": 710,
-        "y": 460,
-        "wires": []
-    },
-    {
         "id": "1d48ad4d.2a6283",
         "type": "comment",
         "z": "4cb346e2.3b0ca8",
         "name": "ch.w6rk.com IN Cluster Spot Format",
         "info": "Usage: DX [BY call] freq call comments",
-        "x": 180,
-        "y": 2120,
-        "wires": []
-    },
-    {
-        "id": "396dcc5e.5a45b4",
-        "type": "comment",
-        "z": "4cb346e2.3b0ca8",
-        "name": "dxc.ve7cc.net:23 - Skimmer no Dups",
-        "info": "",
-        "x": 720,
-        "y": 540,
+        "x": 1820,
+        "y": 160,
         "wires": []
     },
     {
@@ -9311,28 +8256,11 @@
             "febc98ff.617788",
             "4c1461a1.d6868"
         ],
-        "x": 335,
-        "y": 300,
+        "x": 65,
+        "y": 60,
         "wires": [
             [
                 "e31c3e2d2f4048c2"
-            ]
-        ]
-    },
-    {
-        "id": "a783b266.f8a3e",
-        "type": "link in",
-        "z": "4cb346e2.3b0ca8",
-        "name": "N1MM NC7J DX Skimmer Spots Spot In",
-        "links": [
-            "febc98ff.617788",
-            "4c1461a1.d6868"
-        ],
-        "x": 455,
-        "y": 960,
-        "wires": [
-            [
-                "f1d77e0c53639557"
             ]
         ]
     },
@@ -9346,66 +8274,14 @@
             "581b9b1b.19edb4",
             "829f357c.d6a528"
         ],
-        "x": 155,
-        "y": 2180,
+        "x": 1795,
+        "y": 220,
         "wires": [
             [
                 "e3fe722f.6a2bf",
                 "c01b7a37bb97548c"
             ]
         ]
-    },
-    {
-        "id": "4fc5bc17.1961c4",
-        "type": "link out",
-        "z": "4cb346e2.3b0ca8",
-        "name": "DX Cluster RAW Out",
-        "links": [
-            "864a2180.57d3",
-            "e9d1adb2d99a3011"
-        ],
-        "x": 1415,
-        "y": 80,
-        "wires": []
-    },
-    {
-        "id": "b338b8f3.498b48",
-        "type": "link out",
-        "z": "4cb346e2.3b0ca8",
-        "name": "Digital Skim RAW Out",
-        "links": [
-            "864a2180.57d3",
-            "e9d1adb2d99a3011"
-        ],
-        "x": 1435,
-        "y": 1780,
-        "wires": []
-    },
-    {
-        "id": "b5b51e9a.e30e5",
-        "type": "link out",
-        "z": "4cb346e2.3b0ca8",
-        "name": "Ham Alert RAW Out",
-        "links": [
-            "cf5de205.429d7",
-            "864a2180.57d3",
-            "e9d1adb2d99a3011"
-        ],
-        "x": 1395,
-        "y": 1780,
-        "wires": []
-    },
-    {
-        "id": "869cd822.2e3438",
-        "type": "link out",
-        "z": "4cb346e2.3b0ca8",
-        "name": "CH Cluster RAW Out",
-        "links": [
-            "9d7d9584.25fc58"
-        ],
-        "x": 1695,
-        "y": 1900,
-        "wires": []
     },
     {
         "id": "e3fe722f.6a2bf",
@@ -9418,8 +8294,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 290,
-        "y": 2180,
+        "x": 1930,
+        "y": 220,
         "wires": [
             [
                 "913df11f.5d7c"
@@ -9438,8 +8314,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 690,
-        "y": 2200,
+        "x": 2330,
+        "y": 240,
         "wires": []
     },
     {
@@ -9454,8 +8330,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 730,
-        "y": 300,
+        "x": 460,
+        "y": 60,
         "wires": []
     },
     {
@@ -9464,72 +8340,9 @@
         "z": "4cb346e2.3b0ca8",
         "name": "Link In to Cluster Auto Spot",
         "info": "",
-        "x": 430,
-        "y": 400,
+        "x": 590,
+        "y": 140,
         "wires": []
-    },
-    {
-        "id": "e0a419d7.1c6788",
-        "type": "tcp request",
-        "z": "4cb346e2.3b0ca8",
-        "name": "dxc.ai9t.com:7300",
-        "server": "dxc.ai9t.com",
-        "port": "7300",
-        "out": "sit",
-        "splitc": " ",
-        "x": 710,
-        "y": 120,
-        "wires": [
-            [
-                "b420b87.6fe5f48"
-            ]
-        ]
-    },
-    {
-        "id": "c7955c8d.5f7c7",
-        "type": "debug",
-        "z": "4cb346e2.3b0ca8",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1070,
-        "y": 60,
-        "wires": []
-    },
-    {
-        "id": "a60783f1.f9faa",
-        "type": "tcp request",
-        "z": "4cb346e2.3b0ca8",
-        "name": "dxc.nc7j.com:23",
-        "server": "dxc.nc7j.com",
-        "port": "23",
-        "out": "sit",
-        "splitc": " ",
-        "x": 700,
-        "y": 680,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "bf4e1a12.f546e8",
-        "type": "tcp request",
-        "z": "4cb346e2.3b0ca8",
-        "name": "w3lpl.net:7373",
-        "server": "w3lpl.net",
-        "port": "7373",
-        "out": "sit",
-        "splitc": " ",
-        "x": 700,
-        "y": 640,
-        "wires": [
-            []
-        ]
     },
     {
         "id": "1f45eb9a.6f2614",
@@ -9541,8 +8354,8 @@
         "out": "sit",
         "ret": "buffer",
         "splitc": " ",
-        "x": 730,
-        "y": 2540,
+        "x": 2370,
+        "y": 580,
         "wires": [
             [
                 "92740895.fefa38"
@@ -9555,8 +8368,8 @@
         "z": "4cb346e2.3b0ca8",
         "name": "MO Spots NC7J",
         "info": "",
-        "x": 740,
-        "y": 2500,
+        "x": 2380,
+        "y": 540,
         "wires": []
     },
     {
@@ -9569,8 +8382,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 930,
-        "y": 2540,
+        "x": 2570,
+        "y": 580,
         "wires": [
             [
                 "dca4380d.f27d08"
@@ -9608,8 +8421,8 @@
         "checkall": "false",
         "repair": false,
         "outputs": 4,
-        "x": 1050,
-        "y": 2540,
+        "x": 2690,
+        "y": 580,
         "wires": [
             [
                 "3bbc288a.102268"
@@ -9635,8 +8448,8 @@
             "e9d1adb2d99a3011",
             "47c1e9934012eeb6"
         ],
-        "x": 1415,
-        "y": 2460,
+        "x": 3055,
+        "y": 500,
         "wires": []
     },
     {
@@ -9645,8 +8458,8 @@
         "z": "4cb346e2.3b0ca8",
         "name": "CW Skim Raw Out",
         "info": "",
-        "x": 1550,
-        "y": 2420,
+        "x": 3190,
+        "y": 460,
         "wires": []
     },
     {
@@ -9655,8 +8468,8 @@
         "z": "4cb346e2.3b0ca8",
         "name": "w3lpl.net:7373 - Skimmer Only",
         "info": "",
-        "x": 730,
-        "y": 2360,
+        "x": 2370,
+        "y": 400,
         "wires": []
     },
     {
@@ -9665,8 +8478,8 @@
         "z": "4cb346e2.3b0ca8",
         "name": "dxc.nc7j.com:23 - Skimmer Only",
         "info": "",
-        "x": 730,
-        "y": 2320,
+        "x": 2370,
+        "y": 360,
         "wires": []
     },
     {
@@ -9675,24 +8488,8 @@
         "z": "4cb346e2.3b0ca8",
         "name": "dxc.ve7cc.net:23 - Skimmer no Dups",
         "info": "",
-        "x": 740,
-        "y": 2400,
-        "wires": []
-    },
-    {
-        "id": "19e7c5d.c25c03a",
-        "type": "ui_text",
-        "z": "4cb346e2.3b0ca8",
-        "group": "48e08d01.f875d4",
-        "order": 8,
-        "width": 8,
-        "height": 3,
-        "name": "Digtal Spot Output",
-        "label": "Digital Spot Output",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "x": 1290,
-        "y": 1740,
+        "x": 2380,
+        "y": 440,
         "wires": []
     },
     {
@@ -9707,8 +8504,8 @@
         "label": "Ham Alert Output",
         "format": "{{msg.payload}}",
         "layout": "row-spread",
-        "x": 1290,
-        "y": 1840,
+        "x": 790,
+        "y": 640,
         "wires": []
     },
     {
@@ -9723,8 +8520,8 @@
         "label": "CH Output",
         "format": "{{msg.payload}}",
         "layout": "row-spread",
-        "x": 1270,
-        "y": 1980,
+        "x": 770,
+        "y": 560,
         "wires": []
     },
     {
@@ -9739,8 +8536,8 @@
         "label": "Human Cluster Output",
         "format": "{{msg.payload}}",
         "layout": "row-spread",
-        "x": 1260,
-        "y": 200,
+        "x": 800,
+        "y": 480,
         "wires": []
     },
     {
@@ -9755,8 +8552,8 @@
         "label": "NC7J Skimmer Cluster Output",
         "format": "{{msg.payload}}",
         "layout": "row-spread",
-        "x": 1270,
-        "y": 2560,
+        "x": 2910,
+        "y": 600,
         "wires": []
     },
     {
@@ -9792,71 +8589,12 @@
         "propout": "payload",
         "object": "msg",
         "objectout": "msg",
-        "x": 480,
-        "y": 2180,
+        "x": 2120,
+        "y": 220,
         "wires": [
             [
                 "9ff4ba84.317128"
             ]
-        ]
-    },
-    {
-        "id": "d8ca849d.79ae48",
-        "type": "ui_table",
-        "z": "4cb346e2.3b0ca8",
-        "group": "48e08d01.f875d4",
-        "name": "Digital Spots",
-        "order": 3,
-        "width": 8,
-        "height": 6,
-        "columns": [
-            {
-                "field": "freq",
-                "title": "Freq",
-                "width": "",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "call",
-                "title": "Call",
-                "width": "",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "comment",
-                "title": "Comment",
-                "width": "175",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "time",
-                "title": "Time",
-                "width": "",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            }
-        ],
-        "outputs": 1,
-        "cts": true,
-        "x": 2010,
-        "y": 1700,
-        "wires": [
-            []
         ]
     },
     {
@@ -9912,8 +8650,8 @@
         ],
         "outputs": 1,
         "cts": true,
-        "x": 1710,
-        "y": 120,
+        "x": 810,
+        "y": 420,
         "wires": [
             []
         ]
@@ -9971,8 +8709,8 @@
         ],
         "outputs": 1,
         "cts": true,
-        "x": 2060,
-        "y": 1800,
+        "x": 820,
+        "y": 520,
         "wires": [
             []
         ]
@@ -10030,8 +8768,8 @@
         ],
         "outputs": 1,
         "cts": true,
-        "x": 1770,
-        "y": 2520,
+        "x": 3410,
+        "y": 560,
         "wires": [
             []
         ]
@@ -10063,8 +8801,8 @@
         "shape": "circle",
         "showGlow": true,
         "name": "Ham Alert Status",
-        "x": 1090,
-        "y": 3640,
+        "x": 1470,
+        "y": 680,
         "wires": []
     },
     {
@@ -10094,8 +8832,8 @@
         "shape": "circle",
         "showGlow": true,
         "name": "K0XM Status",
-        "x": 1070,
-        "y": 3260,
+        "x": 1450,
+        "y": 300,
         "wires": []
     },
     {
@@ -10125,8 +8863,8 @@
         "shape": "circle",
         "showGlow": true,
         "name": "CW K0XM Status",
-        "x": 1090,
-        "y": 3300,
+        "x": 1470,
+        "y": 340,
         "wires": []
     },
     {
@@ -10156,8 +8894,8 @@
         "shape": "circle",
         "showGlow": true,
         "name": "SSB K0XM Status",
-        "x": 1090,
-        "y": 3340,
+        "x": 1470,
+        "y": 380,
         "wires": []
     },
     {
@@ -10187,8 +8925,8 @@
         "shape": "circle",
         "showGlow": true,
         "name": "Digital K0XM Status",
-        "x": 1100,
-        "y": 3380,
+        "x": 1480,
+        "y": 420,
         "wires": []
     },
     {
@@ -10218,8 +8956,8 @@
         "shape": "circle",
         "showGlow": true,
         "name": "CW Ham Alert Status",
-        "x": 1100,
-        "y": 3680,
+        "x": 1480,
+        "y": 720,
         "wires": []
     },
     {
@@ -10249,8 +8987,8 @@
         "shape": "circle",
         "showGlow": true,
         "name": "SSB Ham Alert Status",
-        "x": 1100,
-        "y": 3720,
+        "x": 1480,
+        "y": 760,
         "wires": []
     },
     {
@@ -10280,8 +9018,8 @@
         "shape": "circle",
         "showGlow": true,
         "name": "Digital Ham Alert Status",
-        "x": 1110,
-        "y": 3760,
+        "x": 1490,
+        "y": 800,
         "wires": []
     },
     {
@@ -10311,8 +9049,8 @@
         "shape": "circle",
         "showGlow": true,
         "name": "CH Spot Status",
-        "x": 1080,
-        "y": 3480,
+        "x": 1460,
+        "y": 520,
         "wires": []
     },
     {
@@ -10342,8 +9080,8 @@
         "shape": "circle",
         "showGlow": true,
         "name": "CW CH Spot Status",
-        "x": 1100,
-        "y": 3520,
+        "x": 1480,
+        "y": 560,
         "wires": []
     },
     {
@@ -10373,8 +9111,8 @@
         "shape": "circle",
         "showGlow": true,
         "name": "SSB CH Spot Status",
-        "x": 1100,
-        "y": 3560,
+        "x": 1480,
+        "y": 600,
         "wires": []
     },
     {
@@ -10404,34 +9142,8 @@
         "shape": "circle",
         "showGlow": true,
         "name": "Digital CH Spot Status",
-        "x": 1100,
-        "y": 3600,
-        "wires": []
-    },
-    {
-        "id": "abc561c.0483ba",
-        "type": "link in",
-        "z": "4cb346e2.3b0ca8",
-        "name": "Test Data IN",
-        "links": [
-            "d48d58ef.494ab8"
-        ],
-        "x": 975,
-        "y": 400,
-        "wires": [
-            [
-                "23e4f57b.58550a"
-            ]
-        ]
-    },
-    {
-        "id": "f425f93f.1bedc8",
-        "type": "comment",
-        "z": "4cb346e2.3b0ca8",
-        "name": "Test Data",
-        "info": "",
-        "x": 1130,
-        "y": 420,
+        "x": 1480,
+        "y": 640,
         "wires": []
     },
     {
@@ -10454,8 +9166,8 @@
         "onceDelay": 0.1,
         "topic": "",
         "payloadType": "date",
-        "x": 160,
-        "y": 2920,
+        "x": 1800,
+        "y": 960,
         "wires": [
             [
                 "b9746139.dc1ea"
@@ -10475,8 +9187,8 @@
         "persist": false,
         "proxy": "",
         "authType": "",
-        "x": 330,
-        "y": 2920,
+        "x": 1970,
+        "y": 960,
         "wires": [
             [
                 "8ab6a6b6.193008"
@@ -10489,8 +9201,8 @@
         "z": "4cb346e2.3b0ca8",
         "name": "POTA Spotting Network - https://api.pota.app/spot/activator",
         "info": "",
-        "x": 310,
-        "y": 2820,
+        "x": 1950,
+        "y": 860,
         "wires": []
     },
     {
@@ -10504,8 +9216,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1730,
-        "y": 2920,
+        "x": 3010,
+        "y": 960,
         "wires": [
             [
                 "af418ce6.31d9b",
@@ -10525,8 +9237,8 @@
         "arraySpltType": "len",
         "stream": false,
         "addname": "",
-        "x": 470,
-        "y": 2920,
+        "x": 2110,
+        "y": 960,
         "wires": [
             [
                 "52da224e.7c358c",
@@ -10617,8 +9329,8 @@
         ],
         "outputs": 1,
         "cts": true,
-        "x": 2170,
-        "y": 2920,
+        "x": 3370,
+        "y": 980,
         "wires": [
             [
                 "3c88bb62.a328a4"
@@ -10634,8 +9346,8 @@
             "11d5fb3e.a81c15",
             "6cbe0d60.9b7274"
         ],
-        "x": 2015,
-        "y": 2820,
+        "x": 3145,
+        "y": 900,
         "wires": []
     },
     {
@@ -10650,8 +9362,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 670,
-        "y": 2880,
+        "x": 2310,
+        "y": 920,
         "wires": []
     },
     {
@@ -10691,8 +9403,8 @@
         "propout": "payload.state",
         "object": "msg",
         "objectout": "msg",
-        "x": 1310,
-        "y": 2900,
+        "x": 2830,
+        "y": 940,
         "wires": [
             [
                 "4447bfbd6f0df411",
@@ -10712,8 +9424,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 2050,
-        "y": 2880,
+        "x": 3250,
+        "y": 940,
         "wires": []
     },
     {
@@ -10728,8 +9440,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 2250,
-        "y": 2880,
+        "x": 3450,
+        "y": 940,
         "wires": []
     },
     {
@@ -10744,8 +9456,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 2370,
-        "y": 2920,
+        "x": 3570,
+        "y": 980,
         "wires": []
     },
     {
@@ -10770,8 +9482,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 1070,
-        "y": 2920,
+        "x": 2630,
+        "y": 960,
         "wires": [
             [
                 "2a5f2b17.aec8a4",
@@ -10811,58 +9523,12 @@
         "propout": "payload.state",
         "object": "msg",
         "objectout": "msg",
-        "x": 1310,
-        "y": 2940,
+        "x": 2830,
+        "y": 980,
         "wires": [
             [
                 "bac2117e.a6dec",
                 "b6dbdd91.34748"
-            ]
-        ]
-    },
-    {
-        "id": "8e3615b.43892e8",
-        "type": "debug",
-        "z": "4cb346e2.3b0ca8",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1650,
-        "y": 580,
-        "wires": []
-    },
-    {
-        "id": "d7ab227b.e8769",
-        "type": "inject",
-        "z": "4cb346e2.3b0ca8",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "DX de W6RK:       7206.0  AB7NK/K7SEN  Washington, AL SSB             1525Z",
-        "payloadType": "str",
-        "x": 970,
-        "y": 1920,
-        "wires": [
-            [
-                "8e6a7b91.e63308"
             ]
         ]
     },
@@ -10878,8 +9544,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1570,
-        "y": 3000,
+        "x": 3210,
+        "y": 1040,
         "wires": []
     },
     {
@@ -10890,8 +9556,8 @@
         "scope": [
             "1f45eb9a.6f2614"
         ],
-        "x": 690,
-        "y": 3420,
+        "x": 1070,
+        "y": 460,
         "wires": [
             [
                 "e95df075.86d6c"
@@ -10908,8 +9574,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 880,
-        "y": 3420,
+        "x": 1260,
+        "y": 460,
         "wires": [
             [
                 "1db65eab.c8e3a1"
@@ -10943,41 +9609,8 @@
         "shape": "circle",
         "showGlow": true,
         "name": "CW MO Spots",
-        "x": 1080,
-        "y": 3420,
-        "wires": []
-    },
-    {
-        "id": "b6ef7df6.47134",
-        "type": "debug",
-        "z": "4cb346e2.3b0ca8",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1190,
-        "y": 480,
-        "wires": []
-    },
-    {
-        "id": "26e56d12.445cf2",
-        "type": "debug",
-        "z": "4cb346e2.3b0ca8",
-        "name": "Contains BEACON",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1530,
-        "y": 380,
+        "x": 1460,
+        "y": 460,
         "wires": []
     },
     {
@@ -10993,219 +9626,9 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1230,
-        "y": 2460,
+        "x": 2870,
+        "y": 500,
         "wires": []
-    },
-    {
-        "id": "e593c4ce70027764",
-        "type": "function",
-        "z": "4cb346e2.3b0ca8",
-        "name": "Format Spot",
-        "func": "let spot = msg.payload\n\nlet freqx = spot.substr(17,9);\nlet freq = freqx.trimRight();\nlet callx = spot.substr(26,8);\nlet call = callx.trimRight();\nlet comment = spot.substr(39,25);\nlet time = spot.substr(70,5);\nlet qthstatus = \"\";\nlet source = \"CL\";\nlet calllength = call.length;\nlet type = \"spot\";\n\nreturn {payload : {type:type,freq:freq,call:call,comment:comment,time:time,qthstatus:qthstatus,source:source,calllength:calllength}};\n",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1250,
-        "y": 120,
-        "wires": [
-            [
-                "4fc5bc17.1961c4",
-                "87c21b78f7802bcb",
-                "6d31676d.1dc3a8"
-            ]
-        ]
-    },
-    {
-        "id": "87c21b78f7802bcb",
-        "type": "debug",
-        "z": "4cb346e2.3b0ca8",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1490,
-        "y": 180,
-        "wires": []
-    },
-    {
-        "id": "828dadf31e783bcf",
-        "type": "debug",
-        "z": "4cb346e2.3b0ca8",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1690,
-        "y": 180,
-        "wires": []
-    },
-    {
-        "id": "bfeed6e593a4d2c6",
-        "type": "function",
-        "z": "4cb346e2.3b0ca8",
-        "name": "Table Format",
-        "func": "let spot = msg.payload\n\nlet freq = spot.freq;\nlet call = spot.call;\nlet comment = spot.comment;\nlet time = spot.time;\n\n\nreturn {payload:{\n    command:\"addData\",\n    arguments:[\n        {\n            freq:freq,call:call,comment:comment,time:time\n        },\n        true\n    ],\n    returnPromise:true\n    }\n};",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1670,
-        "y": 540,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "ef5897ac51f0a515",
-        "type": "function",
-        "z": "4cb346e2.3b0ca8",
-        "name": "Format Spot",
-        "func": "let spot = msg.payload\n\nlet freqx = spot.substr(17,9);\nlet freq = freqx.trimRight();\nlet callx = spot.substr(26,8);\nlet call = callx.trimRight();\nlet comment = spot.substr(39,25);\nlet time = spot.substr(70,5);\nlet qthstatus = \"\";\nlet source = \"SK\";\nlet calllength = call.length;\nlet type = \"spot\";\n\nreturn {payload : {type:type,freq:freq,call:call,comment:comment,time:time,qthstatus:qthstatus,source:source,calllength:calllength}};\n",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1430,
-        "y": 540,
-        "wires": [
-            [
-                "bfeed6e593a4d2c6",
-                "b4e80940.9cb2f8",
-                "8e3615b.43892e8"
-            ]
-        ]
-    },
-    {
-        "id": "ab3ea9b39d21e81e",
-        "type": "function",
-        "z": "4cb346e2.3b0ca8",
-        "name": "Table Format",
-        "func": "let spot = msg.payload\n\nlet freq = spot.freq;\nlet call = spot.call;\nlet comment = spot.comment;\nlet time = spot.time;\n\n\nreturn {payload:{\n    command:\"addData\",\n    arguments:[\n        {\n            freq:freq,call:call,comment:comment,time:time\n        },\n        true\n    ],\n    returnPromise:true\n    }\n};",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1750,
-        "y": 1700,
-        "wires": [
-            [
-                "d8ca849d.79ae48"
-            ]
-        ]
-    },
-    {
-        "id": "a65fb0085cd54613",
-        "type": "function",
-        "z": "4cb346e2.3b0ca8",
-        "name": "Format Spot",
-        "func": "let spot = msg.payload\n\nlet freqx = spot.substr(17,9);\nlet freq = freqx.trimRight();\nlet callx = spot.substr(26,8);\nlet call = callx.trimRight();\nlet comment = spot.substr(39,25);\nlet time = spot.substr(70,5);\nlet qthstatus = \"\";\nlet source = \"DI\";\nlet calllength = call.length;\nlet type = \"spot\";\n\nreturn {payload : {type:type,freq:freq,call:call,comment:comment,time:time,qthstatus:qthstatus,source:source,calllength:calllength}};\n",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1270,
-        "y": 1700,
-        "wires": [
-            [
-                "ab3ea9b39d21e81e",
-                "b338b8f3.498b48",
-                "39e09a1173b4269a"
-            ]
-        ]
-    },
-    {
-        "id": "90ce8a3b5b8c1089",
-        "type": "function",
-        "z": "4cb346e2.3b0ca8",
-        "name": "Table Format",
-        "func": "let spot = msg.payload;\n\nlet freq = spot.freq;\nlet call = spot.call;\nlet comment = spot.comment;\nlet time = spot.time;\n\nreturn {payload:{\n    command:\"addData\",\n    arguments:[\n        {\n            freq:freq,call:call,comment:comment,time:time\n        },\n        true\n    ],\n    returnPromise:true\n    }\n};",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1750,
-        "y": 1840,
-        "wires": [
-            [
-                "383fe002.a1387"
-            ]
-        ]
-    },
-    {
-        "id": "c4a8ae3506aa0393",
-        "type": "function",
-        "z": "4cb346e2.3b0ca8",
-        "name": "Table Format",
-        "func": "let spot = msg.payload;\n\nlet freq = spot.freq;\nlet call = spot.call;\nlet comment = spot.comment;\nlet time = spot.time;\n\nreturn {payload:{\n    command:\"addData\",\n    arguments:[\n        {\n            freq:freq,call:call,comment:comment,time:time\n        },\n        true\n    ],\n    returnPromise:true\n    }\n};",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1750,
-        "y": 1940,
-        "wires": [
-            [
-                "383fe002.a1387"
-            ]
-        ]
-    },
-    {
-        "id": "dc4cec731ba7386f",
-        "type": "string",
-        "z": "4cb346e2.3b0ca8",
-        "name": "To State",
-        "methods": [
-            {
-                "name": "getRightMost",
-                "params": [
-                    {
-                        "type": "str",
-                        "value": ","
-                    }
-                ]
-            },
-            {
-                "name": "trim",
-                "params": []
-            },
-            {
-                "name": "getLeftMost",
-                "params": [
-                    {
-                        "type": "str",
-                        "value": " "
-                    }
-                ]
-            }
-        ],
-        "prop": "payload.comment",
-        "propout": "payload.state",
-        "object": "msg",
-        "objectout": "msg",
-        "x": 1420,
-        "y": 1940,
-        "wires": [
-            [
-                "50b483b7ecc1aa43"
-            ]
-        ]
     },
     {
         "id": "2ecf905e890b9caf",
@@ -11218,8 +9641,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1470,
-        "y": 2520,
+        "x": 3110,
+        "y": 560,
         "wires": [
             [
                 "4e828cc3.012de4"
@@ -11237,8 +9660,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1250,
-        "y": 2520,
+        "x": 2890,
+        "y": 560,
         "wires": [
             [
                 "2ecf905e890b9caf",
@@ -11257,8 +9680,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1990,
-        "y": 2920,
+        "x": 3190,
+        "y": 980,
         "wires": [
             [
                 "5bbe4d93.fe20d4",
@@ -11279,8 +9702,8 @@
         "persist": false,
         "proxy": "",
         "authType": "",
-        "x": 350,
-        "y": 3100,
+        "x": 1990,
+        "y": 1140,
         "wires": [
             [
                 "54adefa65f63df72"
@@ -11308,8 +9731,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 170,
-        "y": 3100,
+        "x": 1810,
+        "y": 1140,
         "wires": [
             [
                 "26e69be7d8f5d3ff"
@@ -11328,8 +9751,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 740,
-        "y": 3120,
+        "x": 2350,
+        "y": 1140,
         "wires": []
     },
     {
@@ -11340,8 +9763,8 @@
         "property": "payload",
         "action": "",
         "pretty": true,
-        "x": 530,
-        "y": 3120,
+        "x": 2170,
+        "y": 1140,
         "wires": [
             [
                 "1b5b69b0a13bbaaa"
@@ -11354,24 +9777,8 @@
         "z": "4cb346e2.3b0ca8",
         "name": "SOTA Spotting API",
         "info": "",
-        "x": 200,
-        "y": 3040,
-        "wires": []
-    },
-    {
-        "id": "39e09a1173b4269a",
-        "type": "debug",
-        "z": "4cb346e2.3b0ca8",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1470,
-        "y": 1740,
+        "x": 1840,
+        "y": 1080,
         "wires": []
     },
     {
@@ -11391,8 +9798,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 670,
-        "y": 2920,
+        "x": 2290,
+        "y": 960,
         "wires": [
             [
                 "b20bf2635961f79d",
@@ -11412,8 +9819,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1010,
-        "y": 2760,
+        "x": 2650,
+        "y": 800,
         "wires": []
     },
     {
@@ -11435,54 +9842,13 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 480,
-        "y": 300,
+        "x": 210,
+        "y": 60,
         "wires": [
             [
                 "bd8a9b80.800538"
             ]
         ]
-    },
-    {
-        "id": "f1d77e0c53639557",
-        "type": "change",
-        "z": "4cb346e2.3b0ca8",
-        "name": "Move Spot to Payload",
-        "rules": [
-            {
-                "t": "move",
-                "p": "payload.spot",
-                "pt": "msg",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 600,
-        "y": 960,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "26d7867e2146c3cd",
-        "type": "debug",
-        "z": "4cb346e2.3b0ca8",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1420,
-        "y": 300,
-        "wires": []
     },
     {
         "id": "afdcc545f57050a6",
@@ -11496,37 +9862,9 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1310,
-        "y": 2760,
+        "x": 2950,
+        "y": 800,
         "wires": []
-    },
-    {
-        "id": "50b483b7ecc1aa43",
-        "type": "change",
-        "z": "4cb346e2.3b0ca8",
-        "name": "County == null",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload.county",
-                "pt": "msg",
-                "to": "",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1580,
-        "y": 1940,
-        "wires": [
-            [
-                "c4a8ae3506aa0393",
-                "869cd822.2e3438"
-            ]
-        ]
     },
     {
         "id": "9d4763c9a7c186c6",
@@ -11552,8 +9890,8 @@
         "propout": "payload.comments",
         "object": "msg",
         "objectout": "msg",
-        "x": 1630,
-        "y": 2740,
+        "x": 3270,
+        "y": 780,
         "wires": [
             []
         ]
@@ -11570,8 +9908,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1550,
-        "y": 2860,
+        "x": 3010,
+        "y": 880,
         "wires": []
     },
     {
@@ -11586,8 +9924,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 320,
-        "y": 2260,
+        "x": 1960,
+        "y": 300,
         "wires": []
     },
     {
@@ -11611,8 +9949,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 880,
-        "y": 2920,
+        "x": 2460,
+        "y": 960,
         "wires": [
             [],
             [
@@ -11647,8 +9985,8 @@
         "shape": "circle",
         "showGlow": true,
         "name": "Digital Digital NC7J Spot Status",
-        "x": 1130,
-        "y": 3920,
+        "x": 1510,
+        "y": 960,
         "wires": []
     },
     {
@@ -11678,8 +10016,8 @@
         "shape": "circle",
         "showGlow": true,
         "name": "SSB Digital NC7J Spot Status",
-        "x": 1130,
-        "y": 3880,
+        "x": 1510,
+        "y": 920,
         "wires": []
     },
     {
@@ -11709,8 +10047,8 @@
         "shape": "circle",
         "showGlow": true,
         "name": "CW Digital NC7J Spot Status",
-        "x": 1120,
-        "y": 3840,
+        "x": 1500,
+        "y": 880,
         "wires": []
     },
     {
@@ -11740,8 +10078,8 @@
         "shape": "circle",
         "showGlow": true,
         "name": "Digital NC7J Spot Status",
-        "x": 1110,
-        "y": 3800,
+        "x": 1490,
+        "y": 840,
         "wires": []
     },
     {
@@ -11754,8 +10092,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 880,
-        "y": 3800,
+        "x": 1260,
+        "y": 840,
         "wires": [
             [
                 "891cc22d.f52e6",
@@ -11773,8 +10111,8 @@
         "scope": [
             "70063ae2.20ee14"
         ],
-        "x": 690,
-        "y": 3800,
+        "x": 1070,
+        "y": 840,
         "wires": [
             [
                 "4b772ce4.38f564"
@@ -11808,8 +10146,8 @@
         "shape": "circle",
         "showGlow": true,
         "name": "CW Skimmer Status",
-        "x": 1120,
-        "y": 3980,
+        "x": 1500,
+        "y": 1020,
         "wires": []
     },
     {
@@ -11839,8 +10177,8 @@
         "shape": "circle",
         "showGlow": true,
         "name": "CW-Skimmer Status",
-        "x": 1120,
-        "y": 4020,
+        "x": 1500,
+        "y": 1060,
         "wires": []
     },
     {
@@ -11870,8 +10208,8 @@
         "shape": "circle",
         "showGlow": true,
         "name": "SSB CW-Skimmer Status",
-        "x": 1140,
-        "y": 4060,
+        "x": 1520,
+        "y": 1100,
         "wires": []
     },
     {
@@ -11901,8 +10239,8 @@
         "shape": "circle",
         "showGlow": true,
         "name": "Digital CW-Skimmer Status",
-        "x": 1160,
-        "y": 4100,
+        "x": 1540,
+        "y": 1140,
         "wires": []
     },
     {
@@ -11915,8 +10253,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 860,
-        "y": 3980,
+        "x": 1240,
+        "y": 1020,
         "wires": [
             [
                 "889a234e.5a103",
@@ -11932,10 +10270,11 @@
         "z": "4cb346e2.3b0ca8",
         "name": "CW Skimmer Status",
         "scope": [
-            "889f3afb.727b08"
+            "1f5bae85164954a9",
+            "d44b6a617109f831"
         ],
-        "x": 700,
-        "y": 3980,
+        "x": 1080,
+        "y": 1020,
         "wires": [
             [
                 "f834c77f.6a37d8"
@@ -11946,19 +10285,38 @@
         "id": "1f5bae85164954a9",
         "type": "subflow:0a55e0b186efe415",
         "z": "4cb346e2.3b0ca8",
-        "name": "",
+        "name": "W3LPL",
         "env": [
+            {
+                "name": "Host",
+                "value": "w3lpl.net",
+                "type": "str"
+            },
+            {
+                "name": "Port",
+                "value": "7373",
+                "type": "str"
+            },
+            {
+                "name": "Callsign",
+                "value": "kd9lsv",
+                "type": "str"
+            },
             {
                 "name": "Cluster",
                 "value": "",
                 "type": "str"
             }
         ],
-        "x": 310,
-        "y": 820,
+        "x": 520,
+        "y": 300,
         "wires": [
-            [],
-            []
+            [
+                "ce1ea711.ef3458"
+            ],
+            [
+                "38404c14.570654"
+            ]
         ]
     },
     {
@@ -12052,32 +10410,14 @@
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
-        "topic": "",
+        "topic": "connect",
         "payload": "",
-        "payloadType": "date",
-        "x": 180,
-        "y": 1340,
+        "payloadType": "str",
+        "x": 240,
+        "y": 280,
         "wires": [
             [
-                "34c3234f.78734c"
-            ]
-        ]
-    },
-    {
-        "id": "34c3234f.78734c",
-        "type": "function",
-        "z": "4cb346e2.3b0ca8",
-        "name": "Send Call",
-        "func": "msg.payload = 'aa0z\\r\\n'\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "x": 380,
-        "y": 1300,
-        "wires": [
-            [
-                "798e43a.ed27fbc"
+                "982ef287226758a8"
             ]
         ]
     },
@@ -12095,39 +10435,18 @@
         "tooltip": "Connect to Cluster",
         "color": "",
         "bgcolor": "Green",
+        "className": "",
         "icon": "",
-        "payload": "",
-        "payloadType": "date",
-        "topic": "topic",
-        "topicType": "msg",
-        "x": 160,
-        "y": 1300,
+        "payload": "aa0z/r/n",
+        "payloadType": "str",
+        "topic": "connect",
+        "topicType": "str",
+        "x": 220,
+        "y": 320,
         "wires": [
             [
-                "34c3234f.78734c"
+                "982ef287226758a8"
             ]
-        ]
-    },
-    {
-        "id": "798e43a.ed27fbc",
-        "type": "delay",
-        "z": "4cb346e2.3b0ca8",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "3",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "outputs": 1,
-        "x": 520,
-        "y": 1320,
-        "wires": [
-            []
         ]
     },
     {
@@ -12187,34 +10506,6 @@
         ]
     },
     {
-        "id": "61cdc66f.f9b678",
-        "type": "ui_button",
-        "z": "4cb346e2.3b0ca8",
-        "name": "Connect K0XM DXC",
-        "group": "292559ae.57e9e6",
-        "order": 4,
-        "width": 4,
-        "height": 1,
-        "passthru": false,
-        "label": "Connect K0XM DXC",
-        "tooltip": "Connect to Cluster",
-        "color": "",
-        "bgcolor": "Green",
-        "icon": "",
-        "payload": "",
-        "payloadType": "date",
-        "topic": "topic",
-        "topicType": "msg",
-        "x": 140,
-        "y": 1380,
-        "wires": [
-            [
-                "83ea833f.eea95",
-                "c7636d9e.8fdd3"
-            ]
-        ]
-    },
-    {
         "id": "e80aa3c5.73e35",
         "type": "inject",
         "z": "4cb346e2.3b0ca8",
@@ -12241,34 +10532,6 @@
             [
                 "83ea833f.eea95",
                 "c7636d9e.8fdd3"
-            ]
-        ]
-    },
-    {
-        "id": "eabf1726.77a018",
-        "type": "ui_button",
-        "z": "4cb346e2.3b0ca8",
-        "name": "Connect Ham Alert",
-        "group": "b127ae72.b0bd3",
-        "order": 6,
-        "width": 4,
-        "height": 1,
-        "passthru": false,
-        "label": "Connect Ham Alert",
-        "tooltip": "Connect to Cluster",
-        "color": "",
-        "bgcolor": "Green",
-        "icon": "",
-        "payload": "",
-        "payloadType": "date",
-        "topic": "topic",
-        "topicType": "msg",
-        "x": 130,
-        "y": 1460,
-        "wires": [
-            [
-                "80b61b7d.57fa28",
-                "b492c931.ec40b8"
             ]
         ]
     },
@@ -12404,33 +10667,6 @@
         ]
     },
     {
-        "id": "5aa7cd21.c71d14",
-        "type": "ui_button",
-        "z": "4cb346e2.3b0ca8",
-        "name": "Connect CH Spots",
-        "group": "b127ae72.b0bd3",
-        "order": 4,
-        "width": 4,
-        "height": 1,
-        "passthru": false,
-        "label": "Connect CH Spots",
-        "tooltip": "Connect to Cluster",
-        "color": "",
-        "bgcolor": "Green",
-        "icon": "",
-        "payload": "",
-        "payloadType": "date",
-        "topic": "topic",
-        "topicType": "msg",
-        "x": 150,
-        "y": 1540,
-        "wires": [
-            [
-                "410194dd.2bd00c"
-            ]
-        ]
-    },
-    {
         "id": "c33632d.535ced",
         "type": "function",
         "z": "4cb346e2.3b0ca8",
@@ -12517,34 +10753,6 @@
         ]
     },
     {
-        "id": "64a3cfee.f2795",
-        "type": "ui_button",
-        "z": "4cb346e2.3b0ca8",
-        "name": "NC7J Connect RBN",
-        "group": "a1609914.8e8218",
-        "order": 4,
-        "width": 4,
-        "height": 1,
-        "passthru": false,
-        "label": "NC7J Connect Skimmer",
-        "tooltip": "Connect to Cluster",
-        "color": "",
-        "bgcolor": "Green",
-        "icon": "",
-        "payload": "",
-        "payloadType": "date",
-        "topic": "topic",
-        "topicType": "msg",
-        "x": 100,
-        "y": 1640,
-        "wires": [
-            [
-                "c33632d.535ced",
-                "d6c40087.76579"
-            ]
-        ]
-    },
-    {
         "id": "d44b6a617109f831",
         "type": "subflow:0a55e0b186efe415",
         "z": "4cb346e2.3b0ca8",
@@ -12552,12 +10760,17 @@
         "env": [
             {
                 "name": "Callsign",
-                "value": "KD9LSV",
+                "value": "kd9lsv",
                 "type": "str"
+            },
+            {
+                "name": "Options",
+                "value": " ",
+                "type": "json"
             }
         ],
-        "x": 640,
-        "y": 840,
+        "x": 520,
+        "y": 360,
         "wires": [
             [
                 "ce1ea711.ef3458"
@@ -12620,8 +10833,8 @@
         ],
         "outputs": 1,
         "cts": true,
-        "x": 870,
-        "y": 820,
+        "x": 770,
+        "y": 300,
         "wires": [
             []
         ]
@@ -12638,8 +10851,8 @@
         "label": "Skimmer Cluster Output",
         "format": "{{msg.payload}}",
         "layout": "row-spread",
-        "x": 890,
-        "y": 860,
+        "x": 790,
+        "y": 360,
         "wires": []
     },
     {
@@ -12662,44 +10875,8 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 960,
-        "y": 1060,
-        "wires": [
-            [
-                "d7dd009.c2dbb"
-            ]
-        ]
-    },
-    {
-        "id": "d7dd009.c2dbb",
-        "type": "function",
-        "z": "4cb346e2.3b0ca8",
-        "name": "Send Filter",
-        "func": "msg.payload = 'SET DX FILTER SKIMMER AND SPOTTERSTATE=[MO,NE,IA,IL,KY,TN,AR,OK,KS] AND COMMENT=[*rtty*] OR NOT SKIMMER AND SPOTTERSTATE=[MO,NE,IA,IL,KY,TN,AR,OK,KS] AND COMMENT=[*rtty*] AND NOT COMMENT=[*beacon*,*NCDXF*,*heard*] OR SPOTTER=W3LPL-3 AND COMMENT=[*mo*,*ne*,*ia*,*ky*,*tn*,*ar*,*ok*,*ks*] AND COMMENT=[*rtty*]\\r\\n'\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1150,
-        "y": 1060,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "2e82c68b.97092a",
-        "type": "function",
-        "z": "4cb346e2.3b0ca8",
-        "name": "Set Filter",
-        "func": "msg.payload = 'Set DX Filter (skimmer and spottercont=na) and (not skimmer and spottercont=na)\\r\\n'\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1140,
-        "y": 1140,
+        "x": 200,
+        "y": 740,
         "wires": [
             []
         ]
@@ -12718,17 +10895,16 @@
         "tooltip": "",
         "color": "",
         "bgcolor": "",
+        "className": "",
         "icon": "",
-        "payload": "",
-        "payloadType": "date",
+        "payload": "Set DX Filter (skimmer and spottercont=na) and (not skimmer and spottercont=na)\\r\\n",
+        "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 960,
-        "y": 1140,
+        "x": 200,
+        "y": 820,
         "wires": [
-            [
-                "2e82c68b.97092a"
-            ]
+            []
         ]
     },
     {
@@ -12745,48 +10921,14 @@
         "tooltip": "",
         "color": "",
         "bgcolor": "",
+        "className": "",
         "icon": "",
-        "payload": "",
-        "payloadType": "date",
+        "payload": "Set DX Filter\\r\\n",
+        "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 960,
-        "y": 1100,
-        "wires": [
-            [
-                "587be154.602e5"
-            ]
-        ]
-    },
-    {
-        "id": "587be154.602e5",
-        "type": "function",
-        "z": "4cb346e2.3b0ca8",
-        "name": "Clear Filter",
-        "func": "msg.payload = 'Set DX Filter\\r\\n'\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "x": 1150,
-        "y": 1100,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "a016e092.8a46b",
-        "type": "function",
-        "z": "4cb346e2.3b0ca8",
-        "name": "Send Filter",
-        "func": "msg.payload = 'set DX filter (skimmer and spotterstate=[MO,NE,IA,IL,KY,TN,AR,OK,KS]) and (skimmer and spottercont=na)\\r\\n'\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1150,
-        "y": 1200,
+        "x": 220,
+        "y": 780,
         "wires": [
             []
         ]
@@ -12805,17 +10947,16 @@
         "tooltip": "",
         "color": "",
         "bgcolor": "",
+        "className": "",
         "icon": "",
-        "payload": "",
-        "payloadType": "date",
+        "payload": "'set DX filter (skimmer and spotterstate=[MO,NE,IA,IL,KY,TN,AR,OK,KS]) and (skimmer and spottercont=na)\\r\\n'",
+        "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 950,
-        "y": 1200,
+        "x": 190,
+        "y": 860,
         "wires": [
-            [
-                "a016e092.8a46b"
-            ]
+            []
         ]
     },
     {
@@ -12843,6 +10984,471 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "ed7065d8.6f56c8",
+        "type": "inject",
+        "z": "4cb346e2.3b0ca8",
+        "name": "Disconnect",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "disconnect",
+        "x": 240,
+        "y": 360,
+        "wires": [
+            [
+                "982ef287226758a8"
+            ]
+        ]
+    },
+    {
+        "id": "84dab531a496a5a7",
+        "type": "subflow:0a55e0b186efe415",
+        "z": "4cb346e2.3b0ca8",
+        "name": "AI9T",
+        "env": [
+            {
+                "name": "Host",
+                "value": "dxc.ai9t.com",
+                "type": "str"
+            },
+            {
+                "name": "Port",
+                "value": "7300",
+                "type": "str"
+            },
+            {
+                "name": "Callsign",
+                "value": "kd9lsv",
+                "type": "str"
+            }
+        ],
+        "x": 510,
+        "y": 420,
+        "wires": [
+            [
+                "ee88cd3e.0b8e9"
+            ],
+            [
+                "38e66d41.79c412"
+            ]
+        ]
+    },
+    {
+        "id": "2af1d341d58943b0",
+        "type": "subflow:0a55e0b186efe415",
+        "z": "4cb346e2.3b0ca8",
+        "name": "K0XM",
+        "env": [
+            {
+                "name": "Host",
+                "value": "dxc.k0xm.net",
+                "type": "str"
+            },
+            {
+                "name": "Port",
+                "value": "7300",
+                "type": "str"
+            },
+            {
+                "name": "Callsign",
+                "value": "kd9lsv",
+                "type": "str"
+            }
+        ],
+        "x": 510,
+        "y": 480,
+        "wires": [
+            [
+                "ee88cd3e.0b8e9"
+            ],
+            [
+                "38e66d41.79c412"
+            ]
+        ]
+    },
+    {
+        "id": "86aa8750b58d5cce",
+        "type": "subflow:0a55e0b186efe415",
+        "z": "4cb346e2.3b0ca8",
+        "name": "CH W6RK",
+        "env": [
+            {
+                "name": "Host",
+                "value": "ch.w6rk.com",
+                "type": "str"
+            },
+            {
+                "name": "Port",
+                "value": "7300",
+                "type": "str"
+            },
+            {
+                "name": "Callsign",
+                "value": "kd9lsv",
+                "type": "str"
+            }
+        ],
+        "x": 530,
+        "y": 560,
+        "wires": [
+            [
+                "383fe002.a1387"
+            ],
+            [
+                "46861ac4.8c9034"
+            ]
+        ]
+    },
+    {
+        "id": "d81e704e0de0f1d9",
+        "type": "subflow:0a55e0b186efe415",
+        "z": "4cb346e2.3b0ca8",
+        "name": "HamAlert",
+        "env": [
+            {
+                "name": "Host",
+                "value": "hamalert.org",
+                "type": "str"
+            },
+            {
+                "name": "Port",
+                "value": "7300",
+                "type": "str"
+            },
+            {
+                "name": "Callsign",
+                "value": "kd9lsv",
+                "type": "str"
+            }
+        ],
+        "x": 520,
+        "y": 620,
+        "wires": [
+            [
+                "383fe002.a1387"
+            ],
+            [
+                "e941155b.7564d8"
+            ]
+        ]
+    },
+    {
+        "id": "64a3cfee.f2795",
+        "type": "ui_button",
+        "z": "4cb346e2.3b0ca8",
+        "name": "NC7J Connect RBN",
+        "group": "a1609914.8e8218",
+        "order": 4,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "NC7J Connect Skimmer",
+        "tooltip": "Connect to Cluster",
+        "color": "",
+        "bgcolor": "Green",
+        "icon": "",
+        "payload": "",
+        "payloadType": "date",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 200,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5aa7cd21.c71d14",
+        "type": "ui_button",
+        "z": "4cb346e2.3b0ca8",
+        "name": "Connect CH Spots",
+        "group": "b127ae72.b0bd3",
+        "order": 4,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "Connect CH Spots",
+        "tooltip": "Connect to Cluster",
+        "color": "",
+        "bgcolor": "Green",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "date",
+        "topic": "connect",
+        "topicType": "str",
+        "x": 210,
+        "y": 560,
+        "wires": [
+            [
+                "86aa8750b58d5cce"
+            ]
+        ]
+    },
+    {
+        "id": "eabf1726.77a018",
+        "type": "ui_button",
+        "z": "4cb346e2.3b0ca8",
+        "name": "Connect Ham Alert",
+        "group": "b127ae72.b0bd3",
+        "order": 6,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "Connect Ham Alert",
+        "tooltip": "Connect to Cluster",
+        "color": "",
+        "bgcolor": "Green",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "date",
+        "topic": "connect",
+        "topicType": "str",
+        "x": 210,
+        "y": 620,
+        "wires": [
+            [
+                "d81e704e0de0f1d9"
+            ]
+        ]
+    },
+    {
+        "id": "61cdc66f.f9b678",
+        "type": "ui_button",
+        "z": "4cb346e2.3b0ca8",
+        "name": "Connect K0XM DXC",
+        "group": "292559ae.57e9e6",
+        "order": 4,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "Connect K0XM DXC",
+        "tooltip": "Connect to Cluster",
+        "color": "",
+        "bgcolor": "Green",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "connect",
+        "topicType": "str",
+        "x": 200,
+        "y": 480,
+        "wires": [
+            [
+                "2af1d341d58943b0"
+            ]
+        ]
+    },
+    {
+        "id": "cb3bebad.5d7338",
+        "type": "comment",
+        "z": "4cb346e2.3b0ca8",
+        "name": "w3lpl.net:7373 - Skimmer Only",
+        "info": "",
+        "x": 990,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "ef8fb44a.9ccce8",
+        "type": "comment",
+        "z": "4cb346e2.3b0ca8",
+        "name": "dxc.nc7j.com:23 - Skimmer Only",
+        "info": "",
+        "x": 990,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "396dcc5e.5a45b4",
+        "type": "comment",
+        "z": "4cb346e2.3b0ca8",
+        "name": "dxc.ve7cc.net:23 - Skimmer no Dups",
+        "info": "",
+        "x": 1000,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "70063ae2.20ee14",
+        "type": "tcp request",
+        "z": "4cb346e2.3b0ca8",
+        "name": "dxc.nc7j.com:7373 - Digital",
+        "server": "dxc.nc7j.com",
+        "port": "7373",
+        "out": "sit",
+        "ret": "buffer",
+        "splitc": " ",
+        "x": 2360,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2c186f89.b4572",
+        "type": "comment",
+        "z": "4cb346e2.3b0ca8",
+        "name": "Digital Spots",
+        "info": "",
+        "x": 2130,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "b338b8f3.498b48",
+        "type": "link out",
+        "z": "4cb346e2.3b0ca8",
+        "name": "Digital Skim RAW Out",
+        "links": [
+            "864a2180.57d3",
+            "e9d1adb2d99a3011"
+        ],
+        "x": 2755,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "19e7c5d.c25c03a",
+        "type": "ui_text",
+        "z": "4cb346e2.3b0ca8",
+        "group": "48e08d01.f875d4",
+        "order": 8,
+        "width": 8,
+        "height": 3,
+        "name": "Digtal Spot Output",
+        "label": "Digital Spot Output",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 2610,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "d8ca849d.79ae48",
+        "type": "ui_table",
+        "z": "4cb346e2.3b0ca8",
+        "group": "48e08d01.f875d4",
+        "name": "Digital Spots",
+        "order": 3,
+        "width": 8,
+        "height": 6,
+        "columns": [
+            {
+                "field": "freq",
+                "title": "Freq",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "call",
+                "title": "Call",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "comment",
+                "title": "Comment",
+                "width": "175",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "time",
+                "title": "Time",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 1,
+        "cts": true,
+        "x": 3330,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ab3ea9b39d21e81e",
+        "type": "function",
+        "z": "4cb346e2.3b0ca8",
+        "name": "Table Format",
+        "func": "let spot = msg.payload\n\nlet freq = spot.freq;\nlet call = spot.call;\nlet comment = spot.comment;\nlet time = spot.time;\n\n\nreturn {payload:{\n    command:\"addData\",\n    arguments:[\n        {\n            freq:freq,call:call,comment:comment,time:time\n        },\n        true\n    ],\n    returnPromise:true\n    }\n};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3070,
+        "y": 120,
+        "wires": [
+            [
+                "d8ca849d.79ae48"
+            ]
+        ]
+    },
+    {
+        "id": "a65fb0085cd54613",
+        "type": "function",
+        "z": "4cb346e2.3b0ca8",
+        "name": "Format Spot",
+        "func": "let spot = msg.payload\n\nlet freqx = spot.substr(17,9);\nlet freq = freqx.trimRight();\nlet callx = spot.substr(26,8);\nlet call = callx.trimRight();\nlet comment = spot.substr(39,25);\nlet time = spot.substr(70,5);\nlet qthstatus = \"\";\nlet source = \"DI\";\nlet calllength = call.length;\nlet type = \"spot\";\n\nreturn {payload : {type:type,freq:freq,call:call,comment:comment,time:time,qthstatus:qthstatus,source:source,calllength:calllength}};\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2590,
+        "y": 120,
+        "wires": [
+            [
+                "ab3ea9b39d21e81e",
+                "b338b8f3.498b48",
+                "39e09a1173b4269a"
+            ]
+        ]
+    },
+    {
+        "id": "39e09a1173b4269a",
+        "type": "debug",
+        "z": "4cb346e2.3b0ca8",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2790,
+        "y": 160,
+        "wires": []
     },
     {
         "id": "168e851a471fef0c",
@@ -14550,8 +13156,8 @@
         ],
         "outputs": 0,
         "cts": false,
-        "x": 2910,
-        "y": 1240,
+        "x": 2890,
+        "y": 700,
         "wires": []
     },
     {
@@ -14811,9 +13417,9 @@
                 "40d0a6e7.fba998",
                 "29e0c096.8f4c3",
                 "4fd636ef480d796f",
-                "44164e876e5348b1",
                 "5889b202320a1c86",
-                "3c077638798a3968"
+                "3c077638798a3968",
+                "09c9fab6d79ded1b"
             ],
             [
                 "990ffc24b5d3e91b",
@@ -14828,9 +13434,9 @@
                 "29e0c096.8f4c3",
                 "40d0a6e7.fba998",
                 "990ffc24b5d3e91b",
-                "44164e876e5348b1",
                 "5889b202320a1c86",
-                "3c077638798a3968"
+                "3c077638798a3968",
+                "09c9fab6d79ded1b"
             ]
         ]
     },
@@ -14962,8 +13568,8 @@
         "links": [
             "6ebb6307.2d14ac"
         ],
-        "x": 195,
-        "y": 1820,
+        "x": 215,
+        "y": 1720,
         "wires": [
             [
                 "aa6edc9.dcd202",
@@ -14991,8 +13597,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 330,
-        "y": 1840,
+        "x": 350,
+        "y": 1740,
         "wires": [
             [
                 "629be10d3207c21e"
@@ -15029,8 +13635,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 910,
-        "y": 1840,
+        "x": 930,
+        "y": 1740,
         "wires": [
             [
                 "bbd429b4.bea618",
@@ -15050,8 +13656,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 330,
-        "y": 1760,
+        "x": 350,
+        "y": 1660,
         "wires": []
     },
     {
@@ -15067,8 +13673,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1130,
-        "y": 1900,
+        "x": 1150,
+        "y": 1800,
         "wires": []
     },
     {
@@ -15082,8 +13688,8 @@
         "syntax": "mustache",
         "template": "select count(*) as qthstatus from wanted_states where wanted_state='{{state}}'\n\n",
         "output": "str",
-        "x": 1190,
-        "y": 1840,
+        "x": 1210,
+        "y": 1740,
         "wires": [
             [
                 "79534117.7bae2",
@@ -15099,8 +13705,8 @@
         "sqlquery": "msg.topic",
         "sql": "",
         "name": "Wanted States",
-        "x": 1400,
-        "y": 1840,
+        "x": 1420,
+        "y": 1740,
         "wires": [
             [
                 "677ace58.ff95c",
@@ -15171,8 +13777,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1610,
-        "y": 1840,
+        "x": 1630,
+        "y": 1740,
         "wires": [
             [
                 "802c3cf9.97e57",
@@ -15197,8 +13803,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 1870,
-        "y": 1840,
+        "x": 1890,
+        "y": 1740,
         "wires": [
             [
                 "a426fc59.2f983",
@@ -15219,8 +13825,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1440,
-        "y": 1920,
+        "x": 1460,
+        "y": 1820,
         "wires": []
     },
     {
@@ -15236,8 +13842,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1630,
-        "y": 1920,
+        "x": 1650,
+        "y": 1820,
         "wires": []
     },
     {
@@ -15253,8 +13859,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1830,
-        "y": 1920,
+        "x": 1850,
+        "y": 1820,
         "wires": []
     },
     {
@@ -15270,8 +13876,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 2050,
-        "y": 1920,
+        "x": 2070,
+        "y": 1820,
         "wires": []
     },
     {
@@ -15287,8 +13893,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 580,
-        "y": 1760,
+        "x": 600,
+        "y": 1660,
         "wires": []
     },
     {
@@ -15297,8 +13903,8 @@
         "z": "f55cb29c.3fc26",
         "name": "POTA RAW In",
         "info": "",
-        "x": 130,
-        "y": 1760,
+        "x": 150,
+        "y": 1620,
         "wires": []
     },
     {
@@ -15326,8 +13932,8 @@
         "checkall": "false",
         "repair": false,
         "outputs": 3,
-        "x": 620,
-        "y": 1800,
+        "x": 640,
+        "y": 1700,
         "wires": [
             [
                 "ed4de9abeb9adcc3"
@@ -15373,8 +13979,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1620,
-        "y": 1780,
+        "x": 1640,
+        "y": 1680,
         "wires": [
             [
                 "e488c054f759661d"
@@ -15759,8 +14365,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 2730,
-        "y": 480,
+        "x": 2770,
+        "y": 580,
         "wires": []
     },
     {
@@ -15796,8 +14402,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 590,
-        "y": 1880,
+        "x": 610,
+        "y": 1780,
         "wires": []
     },
     {
@@ -15983,8 +14589,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 2670,
-        "y": 1240,
+        "x": 2650,
+        "y": 700,
         "wires": [
             [
                 "20af0b9.939c5f4"
@@ -16249,7 +14855,7 @@
         "persist": false,
         "storeName": "memory",
         "x": 3680,
-        "y": 340,
+        "y": 360,
         "wires": [
             [
                 "7dc24a4bac78cd55"
@@ -16271,7 +14877,7 @@
         "persist": false,
         "storeName": "memory",
         "x": 3680,
-        "y": 380,
+        "y": 420,
         "wires": [
             [
                 "7dc24a4bac78cd55"
@@ -16293,7 +14899,7 @@
         "persist": false,
         "storeName": "memory",
         "x": 3680,
-        "y": 420,
+        "y": 480,
         "wires": [
             [
                 "7dc24a4bac78cd55"
@@ -16315,7 +14921,7 @@
         "persist": false,
         "storeName": "memory",
         "x": 3680,
-        "y": 460,
+        "y": 540,
         "wires": [
             [
                 "7dc24a4bac78cd55"
@@ -16337,7 +14943,7 @@
         "persist": false,
         "storeName": "memory",
         "x": 3680,
-        "y": 500,
+        "y": 600,
         "wires": [
             [
                 "7dc24a4bac78cd55"
@@ -16359,7 +14965,7 @@
         "persist": false,
         "storeName": "memory",
         "x": 3680,
-        "y": 540,
+        "y": 660,
         "wires": [
             [
                 "7dc24a4bac78cd55"
@@ -16457,30 +15063,13 @@
         "officon": "",
         "offcolor": "",
         "animate": false,
-        "x": 3440,
-        "y": 80,
+        "x": 3480,
+        "y": 320,
         "wires": [
             [
-                "7d9ebc4b691185e6",
-                "46f1e156f492c747"
+                "7d9ebc4b691185e6"
             ]
         ]
-    },
-    {
-        "id": "46f1e156f492c747",
-        "type": "debug",
-        "z": "f55cb29c.3fc26",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 3830,
-        "y": 140,
-        "wires": []
     },
     {
         "id": "b9d7e48f07215a52",
@@ -16507,12 +15096,11 @@
         "officon": "",
         "offcolor": "",
         "animate": false,
-        "x": 3450,
-        "y": 120,
+        "x": 3490,
+        "y": 380,
         "wires": [
             [
-                "5a4a9e336dcd9318",
-                "46f1e156f492c747"
+                "5a4a9e336dcd9318"
             ]
         ]
     },
@@ -16542,12 +15130,11 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 3450,
-        "y": 160,
+        "x": 3490,
+        "y": 440,
         "wires": [
             [
-                "cf825aee465f340e",
-                "46f1e156f492c747"
+                "cf825aee465f340e"
             ]
         ]
     },
@@ -16576,12 +15163,11 @@
         "officon": "",
         "offcolor": "",
         "animate": false,
-        "x": 3450,
-        "y": 200,
+        "x": 3490,
+        "y": 500,
         "wires": [
             [
-                "837ef6808d308eb8",
-                "46f1e156f492c747"
+                "837ef6808d308eb8"
             ]
         ]
     },
@@ -16610,12 +15196,11 @@
         "officon": "",
         "offcolor": "",
         "animate": false,
-        "x": 3450,
-        "y": 240,
+        "x": 3490,
+        "y": 560,
         "wires": [
             [
-                "e1c1112376a26693",
-                "46f1e156f492c747"
+                "e1c1112376a26693"
             ]
         ]
     },
@@ -16644,12 +15229,11 @@
         "officon": "",
         "offcolor": "",
         "animate": false,
-        "x": 3450,
-        "y": 280,
+        "x": 3490,
+        "y": 620,
         "wires": [
             [
-                "5b0b56ca86a6665a",
-                "46f1e156f492c747"
+                "5b0b56ca86a6665a"
             ]
         ]
     },
@@ -16728,7 +15312,7 @@
         "payload": "open",
         "payloadType": "str",
         "x": 3230,
-        "y": 180,
+        "y": 620,
         "wires": [
             [
                 "a8d38b0986d76a73",
@@ -16818,7 +15402,7 @@
         "persist": false,
         "storeName": "memory",
         "x": 3700,
-        "y": 900,
+        "y": 860,
         "wires": [
             [
                 "31e578a3165e4727"
@@ -16862,7 +15446,7 @@
         "persist": false,
         "storeName": "memory",
         "x": 3700,
-        "y": 980,
+        "y": 1020,
         "wires": [
             [
                 "31e578a3165e4727"
@@ -16884,7 +15468,7 @@
         "persist": false,
         "storeName": "memory",
         "x": 3700,
-        "y": 1020,
+        "y": 1100,
         "wires": [
             [
                 "31e578a3165e4727"
@@ -16906,7 +15490,7 @@
         "persist": false,
         "storeName": "memory",
         "x": 3700,
-        "y": 1060,
+        "y": 1180,
         "wires": [
             [
                 "31e578a3165e4727"
@@ -16928,7 +15512,7 @@
         "persist": false,
         "storeName": "memory",
         "x": 3710,
-        "y": 1100,
+        "y": 1260,
         "wires": [
             [
                 "31e578a3165e4727"
@@ -16960,8 +15544,8 @@
         "officon": "",
         "offcolor": "",
         "animate": false,
-        "x": 3460,
-        "y": 680,
+        "x": 3500,
+        "y": 840,
         "wires": [
             [
                 "02443029cc0d29f5"
@@ -16993,8 +15577,8 @@
         "officon": "",
         "offcolor": "",
         "animate": false,
-        "x": 3460,
-        "y": 720,
+        "x": 3500,
+        "y": 900,
         "wires": [
             [
                 "f1291466ee8947f3"
@@ -17026,8 +15610,8 @@
         "officon": "",
         "offcolor": "",
         "animate": false,
-        "x": 3460,
-        "y": 760,
+        "x": 3500,
+        "y": 980,
         "wires": [
             [
                 "c23ff25a66aa0e75"
@@ -17059,8 +15643,8 @@
         "officon": "",
         "offcolor": "",
         "animate": false,
-        "x": 3460,
-        "y": 800,
+        "x": 3500,
+        "y": 1060,
         "wires": [
             [
                 "8bbb5a3e3a4a616b"
@@ -17092,8 +15676,8 @@
         "officon": "",
         "offcolor": "",
         "animate": false,
-        "x": 3460,
-        "y": 840,
+        "x": 3500,
+        "y": 1140,
         "wires": [
             [
                 "97fdfaa715ac8c99"
@@ -17125,8 +15709,8 @@
         "officon": "",
         "offcolor": "",
         "animate": false,
-        "x": 3460,
-        "y": 880,
+        "x": 3500,
+        "y": 1220,
         "wires": [
             [
                 "840d76bb6e6ada23"
@@ -21117,6 +19701,20 @@
         "wires": []
     },
     {
+        "id": "dda92a89da9c73b8",
+        "type": "subflow:bc4d4e8.bec2bb",
+        "z": "97eeb337.c639e",
+        "name": "",
+        "x": 620,
+        "y": 220,
+        "wires": [
+            [],
+            [],
+            [],
+            []
+        ]
+    },
+    {
         "id": "cc336a00.fe6248",
         "type": "inject",
         "z": "b8d32320.59f02",
@@ -23815,11 +22413,13 @@
         "id": "dffc242.cc36fd8",
         "type": "exec",
         "z": "d426bca8.5fec3",
+        "d": true,
         "command": "vcgencmd measure_temp",
         "addpay": false,
         "append": "",
         "useSpawn": "",
         "timer": "",
+        "winHide": false,
         "name": "RPi Temp.",
         "x": 385.2221908569336,
         "y": 226.33333683013916,
