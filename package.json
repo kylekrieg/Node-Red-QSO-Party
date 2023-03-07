@@ -1,6 +1,6 @@
 {
     "name": "MOQP",
-    "description": "A Node-RED Project",
+    "description": "QSO Party Dashboard",
     "version": "0.0.1",
     "node-red": {
         "settings": {
@@ -28,6 +28,9 @@
         "node-red-contrib-string": "1.0.0",
         "node-red-contrib-simple-gate": "0.5.2",
         "node-red-node-sqlite": "1.0.3",
-        "node-red-node-ui-table": "0.4.3"
+        "node-red-node-ui-table": "0.4.3",
+        "node-red-contrib-moment": "4.0.0",
+        "node-red-contrib-unit-converter": "0.0.3",
+        "node-red-contrib-web-worldmap": "2.33.0"
     }
 }

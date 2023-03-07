@@ -19553,7 +19553,7 @@
         "type": "comment",
         "z": "b8d32320.59f02",
         "name": "Open Weather Setup",
-        "info": "Enter your location and open weather API Key\n\nAPI Key c75eb2ed81e71f95df70a2c9749ca319\n\n63379\n38.989518 -90.957573\n\nHorse Fly Lane\n\n37.9573323 -91.2261682",
+        "info": "Enter your location and open weather API Key\n\nAPI Key\n\n63379\n38.989518 -90.957573\n\nHorse Fly Lane\n\n37.9573323 -91.2261682",
         "x": 480,
         "y": 260,
         "wires": []
